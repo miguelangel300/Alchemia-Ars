@@ -6,7 +6,9 @@ using static Ingrediente;
 
 public class Pocion : MonoBehaviour
 {
+    //nombre de la pocion
     public PocionN nombre;
+    //lista de ingredientes que componen la pocion
     public List<Ingrediente> ingredientes = new List<Ingrediente>();
 
 

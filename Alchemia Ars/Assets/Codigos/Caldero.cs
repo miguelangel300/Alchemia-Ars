@@ -74,7 +74,12 @@ public class Caldero : MonoBehaviour
             //explota
             explota = true;
         }
-        if (ingredientes.Count > 0)
+        //si hay mas de tres ingredientes explota
+        if(ingredientes.Count > 3 && !explota)
+        {
+            explota = true;
+        }
+        if (ingredientes.Count > 0 && !explota)
         {
             //si hay ingredientes
             //recorremos la lista de los ingredientes incompatibles
