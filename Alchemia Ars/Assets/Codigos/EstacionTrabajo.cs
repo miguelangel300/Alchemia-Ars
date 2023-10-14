@@ -72,7 +72,7 @@ public class EstacionTrabajo : MonoBehaviour
         //buscamos en todos los ingredientes procesados
         for (int i = 0; i < imagenes.Count; i++)
         {
-            //si coincide 
+            //si coincide el ingrediente y el proceso devolvemos la imagen
             if (imagenes[i].GetComponent<IngredienteProcesado>().nombre == nombre && imagenes[i].GetComponent<IngredienteProcesado>().proceso == proceso)
             {
                 return imagenes[i].GetComponent<SpriteRenderer>().sprite;
@@ -80,10 +80,13 @@ public class EstacionTrabajo : MonoBehaviour
         }
         return null;
     }
+    //este metodo se eliminara cuando esten los sprites finales
     private Color BuscarColor(Ingrediente.IngredienteN nombre, Ingrediente.Proceso proceso)
     {
+        //buscamos en todos los ingredientes procesados
         for (int i = 0; i < imagenes.Count; i++)
         {
+            //si coincide el ingrediente y el proceso devolvemos el color
             if (imagenes[i].GetComponent<IngredienteProcesado>().nombre == nombre && imagenes[i].GetComponent<IngredienteProcesado>().proceso == proceso)
             {
                 return imagenes[i].GetComponent<SpriteRenderer>().color;
