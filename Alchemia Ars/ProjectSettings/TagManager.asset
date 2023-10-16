@@ -7,6 +7,10 @@ TagManager:
   - Ingrediente
   - SitioPreparados
   - Pocion
+  - SitioPociones
+  - Papelera
+  - SitioIngredientes
+  - PocionFinal
   layers:
   - Default
   - TransparentFX

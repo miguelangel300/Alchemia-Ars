@@ -9,6 +9,7 @@ public class SeguirCursor : MonoBehaviour
     float tiempo = 0;
     //variable que nos indica si el ingrediente esta siguiendo a la poción
     public bool seguir = true;
+
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +30,7 @@ public class SeguirCursor : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 15))
             {
                 ////si no esta pulsando el sitio de preparados destruye el objeto
-                if (!hit.collider.transform.CompareTag("SitioPreparados"))
+                if (!hit.collider.transform.CompareTag("SitioPreparados") && !hit.collider.transform.CompareTag("SitioPociones") && tag == "Ingrediente")
                 {
                     Invoke("Destruir", 0.25f);
                 }
@@ -38,6 +39,11 @@ public class SeguirCursor : MonoBehaviour
                 {
                     transform.position = hit.collider.transform.position;
                     seguir = false;
+                }
+                //si es la papelera lo destruimos
+                if (hit.collider.transform.CompareTag("Papelera") || hit.collider.transform.CompareTag("SitioIngredientes"))
+                {
+                    Invoke("Destruir", 0.25f);
                 }
             }
         }
@@ -52,6 +58,10 @@ public class SeguirCursor : MonoBehaviour
     {
         Destroy(gameObject);
 
+    }
+    public void onSeguir()
+    {
+        seguir = !seguir;
     }
     private void OnMouseDown()
     {
