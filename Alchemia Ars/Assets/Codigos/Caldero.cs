@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static EstacionTrabajo;
 using static Ingrediente;
 
@@ -76,55 +77,36 @@ public class Caldero : MonoBehaviour
     {
         if (pociones.Count >= 2)
         {
+            int numIp = 0;
             for (int i = 0; i < control.pocionFinal.pociones.Count; i++)
             {
-                //lista de los elementos que ya se han revisado
-                List<Pocion> pocionesRevisadas = new List<Pocion>();
-                int numIp = 0;
                 for (int j = 0; j < pociones.Count; j++)
                 {
-                    bool revisado = false;
-                    //recorremos los ingredientes que ya se han revisado en esta lista de ingredientes incompatibles
-                    for (int l = 0; l < pocionesRevisadas.Count; l++)
+                    if (pociones[j].nombre == control.pocionFinal.pociones[i].nombre)
                     {
-                        //si se encuentra es que ya se ha revisado y no hay que volver a revisar
-                        if (pocionesRevisadas[l].nombre == pociones[j].nombre)
-                        {
-                            revisado = true;
-                            break;
-                        }
+                        numIp++;
                     }
-                    //si el ingrediente no se harevisado
-                    if (!revisado)
-                    {
-                        for (int l = 0; l < control.pociones.Count; l++)
-                        {
-                            //añadimos el ingrediente introducido al caldero que estamos revisando a la lista de ingredientes revisados
-                            pocionesRevisadas.Add(pociones[j]);
-                            if (pociones[j].nombre == control.pociones[i].nombre)
-                            {
-                                numIp++;
-                                break;
-                            }
-                        }
-                    }
-                }
-                if (numIp == control.pociones.Count)
-                {
-
-                    //le decimos que no siga al cursor
-                    pocionFinal.GetComponent<SeguirCursor>().seguir = false;
-                    //lo ponemos en el sitio de preparados
-                    pocionFinal.transform.position = posicionFinal.position;
-                    //creamos el nuevo ingrediente procesado
-                    Instantiate(pocionFinal);
-                    pociones = new List<Pocion>();
-                    break;
                 }
 
 
             }
+
+            if (numIp == control.pocionFinal.pociones.Count)
+            {
+
+                //le decimos que no siga al cursor
+                pocionFinal.GetComponent<SeguirCursor>().seguir = false;
+                //lo ponemos en el sitio de preparados
+                pocionFinal.transform.position = posicionFinal.position;
+                //creamos el nuevo ingrediente procesado
+                Instantiate(pocionFinal);
+                Invoke("PantallaFinal", 3f);
+            }
         }
+    }
+    private void PantallaFinal()
+    {
+        SceneManager.LoadScene("PantallaFinal");
     }
 
     private void CrearPocion()
