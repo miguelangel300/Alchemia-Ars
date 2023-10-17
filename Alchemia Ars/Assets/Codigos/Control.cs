@@ -152,8 +152,7 @@ public class Control : MonoBehaviour
         puntajeFinal += puntaje;
         if (puntajeFinal <= 0)
         {
-            DontDestroyOnLoad(this);
-            SceneManager.LoadScene("PantallaFinal");
+            //pantalla final
         }
     }
     /// <summary>

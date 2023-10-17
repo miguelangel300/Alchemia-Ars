@@ -111,8 +111,7 @@ public class Caldero : MonoBehaviour
     }
     private void PantallaFinal()
     {
-        DontDestroyOnLoad(control);
-        SceneManager.LoadScene("PantallaFinal");
+        //pantalla final
     }
 
     private void CrearPocion()
