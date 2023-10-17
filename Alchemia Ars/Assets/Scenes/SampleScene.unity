@@ -1734,8 +1734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125ad702f220ecf4bab025b62aca79cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pantallaVictoria: {fileID: 0}
-  pantallaDerrota: {fileID: 0}
+  pantallaVictoria: {fileID: 1976411824}
+  pantallaDerrota: {fileID: 1194217166}
 --- !u!1 &966697448
 GameObject:
   m_ObjectHideFlags: 0
