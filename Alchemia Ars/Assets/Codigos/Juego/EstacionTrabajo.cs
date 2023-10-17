@@ -98,6 +98,7 @@ public class EstacionTrabajo : MonoBehaviour
                 {
                     explota = false;
                     Debug.Log("Explota");
+                    control.CambiarPuntaje(-5);
                 }
                 //eliminamos el ingrediente anterior
                 Destroy(ingrediente);

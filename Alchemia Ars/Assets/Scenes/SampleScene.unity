@@ -1353,7 +1353,7 @@ GameObject:
   - component: {fileID: 529723260}
   m_Layer: 0
   m_Name: Escenario
-  m_TagString: Untagged
+  m_TagString: Escenario
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1392,6 +1392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pociones: []
   procesosI: []
+  puntajeFinal: 100
 --- !u!1 &612363323
 GameObject:
   m_ObjectHideFlags: 0

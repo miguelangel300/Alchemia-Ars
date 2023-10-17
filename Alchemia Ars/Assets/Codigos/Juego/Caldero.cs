@@ -64,6 +64,7 @@ public class Caldero : MonoBehaviour
             Debug.Log("Explota");
             ingredientes = new List<Ingrediente>();
             pociones = new List<Pocion>();
+            control.CambiarPuntaje(-15);
             explota = false;
         }
         else
@@ -90,6 +91,10 @@ public class Caldero : MonoBehaviour
 
 
             }
+            if (pociones.Count > control.pocionFinal.pociones.Count)
+            {
+                explota = true;
+            }
 
             if (numIp == control.pocionFinal.pociones.Count)
             {
@@ -106,6 +111,7 @@ public class Caldero : MonoBehaviour
     }
     private void PantallaFinal()
     {
+        DontDestroyOnLoad(control);
         SceneManager.LoadScene("PantallaFinal");
     }
 
@@ -212,7 +218,7 @@ public class Caldero : MonoBehaviour
                             break;
                         }
                     }
-                    //si el ingrediente no se harevisado
+                    //si el ingrediente no se ha revisado
                     if (!revisado)
                     {
                         //recorremos los ingredientes de la lista de ingredientes incompatibles actual
@@ -230,6 +236,8 @@ public class Caldero : MonoBehaviour
                                 {
                                     //el caldero explota
                                     explota = true;
+
+                                    control.CambiarPuntaje(-15);
                                 }
                                 break;
                             }
