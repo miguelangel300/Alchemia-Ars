@@ -15,9 +15,9 @@ public class Caldero : MonoBehaviour
     public List<GameObject> pocionesCreadas;
     public GameObject pocionFinal;
     //lista de pociones introducidas en el caldero
-    public List<Pocion> pociones = new List<Pocion>();
+    public static List<Pocion> pociones = new List<Pocion>();
     //lista de ingredientes introducidos en el caldero
-    public List<Ingrediente> ingredientes = new List<Ingrediente>();
+    public static List<Ingrediente> ingredientes = new List<Ingrediente>();
     //esta variable controla si explota el caldero
     public bool explota = false;
     //este objeto es el que controla que las mezclas sean las correctas
@@ -27,6 +27,11 @@ public class Caldero : MonoBehaviour
     {
         //buscamos el objeto controlador
         control = transform.parent.parent.GetComponent<Control>();
+    }
+    public static void EliminarInventario()
+    {
+        pociones = new List<Pocion>();
+        ingredientes = new List<Ingrediente>();
     }
     //al pulsar el caldero
     private void OnMouseDown()
@@ -111,7 +116,7 @@ public class Caldero : MonoBehaviour
     }
     private void PantallaFinal()
     {
-        //pantalla final
+        ControlCanvas.PantallaVictoria();
     }
 
     private void CrearPocion()

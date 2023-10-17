@@ -14,7 +14,13 @@ public class AlmacenarPocion : MonoBehaviour
     {
         spriteOriginal = GetComponent<SpriteRenderer>();
     }
+    public void EliminarInventario()
+    {
+        indice = -1;
+        GetComponent<SpriteRenderer>().sprite = spriteOriginal.sprite;
+        GetComponent<SpriteRenderer>().color = Color.white;
 
+    }
     private void OnMouseDown()
     {
         if (indice > 0)
