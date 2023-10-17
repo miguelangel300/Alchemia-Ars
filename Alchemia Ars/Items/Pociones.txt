@@ -1,3 +1,3 @@
-Salud;Mandragora-Destilado;Cuerno_de_uicornio-Machacado;Polvo_de_hadas-Destilado
+Salud;Mandragora-Destilado;Cuerno_de_unicornio-Machacado;Alas_de_hadas-Destilado
 Fuerza;Hierbas_magicas-Destilado;Cuerno_de_unicornio-Cortado;Ojo_de_ciclope-Machacado
-Mana;Hierbas_magicas-Machacado;Cuerno_de_unicornio-Machacado;Ingrediente6-Destilado
+Mana;Hierbas_magicas-Machacado;Cuerno_de_unicornio-Machacado;Araña-Destilado

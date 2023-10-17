@@ -9,8 +9,8 @@ public class Seleccionar : MonoBehaviour
     public GameObject imagen;
     private void OnMouseDown()
     {
-        //imagen.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
         //creamos el ingrediente que sigue al cursor
         Instantiate(imagen);
+
     }
 }

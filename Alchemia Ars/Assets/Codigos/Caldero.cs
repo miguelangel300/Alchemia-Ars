@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static EstacionTrabajo;
 using static Ingrediente;
 
@@ -10,6 +11,9 @@ public class Caldero : MonoBehaviour
 
     //posición en la que va a dejar al ingrediente procesado
     public Transform posicionFinal;
+    //Prefas de los pociones creadas
+    public List<GameObject> pocionesCreadas;
+    public GameObject pocionFinal;
     //lista de pociones introducidas en el caldero
     public List<Pocion> pociones = new List<Pocion>();
     //lista de ingredientes introducidos en el caldero
@@ -44,7 +48,7 @@ public class Caldero : MonoBehaviour
         if (pocion != null)
         {
             //si hay pocion y no esta en el sitio de preparados 
-            if (ingrediente.transform.position != posicionFinal.position)
+            if (pocion.transform.position != posicionFinal.position)
             {
                 //añade el ingrediente a la lista y destruye el ingrediente
                 pociones.Add(pocion.GetComponent<Pocion>());
@@ -60,9 +64,119 @@ public class Caldero : MonoBehaviour
             Debug.Log("Explota");
             ingredientes = new List<Ingrediente>();
             pociones = new List<Pocion>();
+            control.CambiarPuntaje(-15);
             explota = false;
         }
+        else
+        {
+            CrearPocion();
+            CrearPocionFinal();
+        }
     }
+
+    private void CrearPocionFinal()
+    {
+        if (pociones.Count >= 2)
+        {
+            int numIp = 0;
+            for (int i = 0; i < control.pocionFinal.pociones.Count; i++)
+            {
+                for (int j = 0; j < pociones.Count; j++)
+                {
+                    if (pociones[j].nombre == control.pocionFinal.pociones[i].nombre)
+                    {
+                        numIp++;
+                    }
+                }
+
+
+            }
+            if (pociones.Count > control.pocionFinal.pociones.Count)
+            {
+                explota = true;
+            }
+
+            if (numIp == control.pocionFinal.pociones.Count)
+            {
+
+                //le decimos que no siga al cursor
+                pocionFinal.GetComponent<SeguirCursor>().seguir = false;
+                //lo ponemos en el sitio de preparados
+                pocionFinal.transform.position = posicionFinal.position;
+                //creamos el nuevo ingrediente procesado
+                Instantiate(pocionFinal);
+                Invoke("PantallaFinal", 3f);
+            }
+        }
+    }
+    private void PantallaFinal()
+    {
+        //pantalla final
+    }
+
+    private void CrearPocion()
+    {
+        if (ingredientes != null && ingredientes.Count == 3)
+        {
+            for (int i = 0; i < control.pociones.Count; i++)
+            {
+                //lista de los elementos que ya se han revisado
+                List<Ingrediente> ingredientesRevisados = new List<Ingrediente>();
+                int numIp = 0;
+                for (int j = 0; j < ingredientes.Count; j++)
+                {
+                    bool revisado = false;
+                    //recorremos los ingredientes que ya se han revisado en esta lista de ingredientes incompatibles
+                    for (int l = 0; l < ingredientesRevisados.Count; l++)
+                    {
+                        //si se encuentra es que ya se ha revisado y no hay que volver a revisar
+                        if (ingredientesRevisados[l].nombre == ingredientes[j].nombre &&
+                            ingredientesRevisados[l].proceso == ingredientes[j].proceso)
+                        {
+                            revisado = true;
+                            break;
+                        }
+                    }
+                    //si el ingrediente no se harevisado
+                    if (!revisado)
+                    {
+                        for (int l = 0; l < control.pociones[i].ingredientes.Count; l++)
+                        {
+                            //añadimos el ingrediente introducido al caldero que estamos revisando a la lista de ingredientes revisados
+                            ingredientesRevisados.Add(ingredientes[j]);
+                            if (ingredientes[j].nombre == control.pociones[i].ingredientes[l].nombre &&
+                                ingredientes[j].proceso == control.pociones[i].ingredientes[l].proceso)
+                            {
+                                numIp++;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (numIp == control.pociones[i].ingredientes.Count)
+                {
+                    GameObject pocion = new GameObject();
+                    for (int k = 0; k < pocionesCreadas.Count; k++)
+                    {
+                        if (pocionesCreadas[k].GetComponent<Pocion>().nombre == control.pociones[i].nombre)
+                        {
+                            pocion = pocionesCreadas[k];
+                        }
+                    }
+
+                    //le decimos que no siga al cursor
+                    pocion.GetComponent<SeguirCursor>().seguir = false;
+                    //lo ponemos en el sitio de preparados
+                    pocion.transform.position = posicionFinal.position;
+                    //creamos el nuevo ingrediente procesado
+                    Instantiate(pocion);
+                    ingredientes = new List<Ingrediente>();
+                    break;
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// Aqui se realizan las comprobaciones de las mezclas
     /// </summary>
@@ -75,7 +189,7 @@ public class Caldero : MonoBehaviour
             explota = true;
         }
         //si hay mas de tres ingredientes explota
-        if(ingredientes.Count > 3 && !explota)
+        if (ingredientes.Count > 3 && !explota)
         {
             explota = true;
         }
@@ -103,7 +217,7 @@ public class Caldero : MonoBehaviour
                             break;
                         }
                     }
-                    //si el ingrediente no se harevisado
+                    //si el ingrediente no se ha revisado
                     if (!revisado)
                     {
                         //recorremos los ingredientes de la lista de ingredientes incompatibles actual
@@ -121,6 +235,8 @@ public class Caldero : MonoBehaviour
                                 {
                                     //el caldero explota
                                     explota = true;
+
+                                    control.CambiarPuntaje(-15);
                                 }
                                 break;
                             }

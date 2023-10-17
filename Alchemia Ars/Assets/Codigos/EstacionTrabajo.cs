@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Ingrediente;
+using static Pocion;
 
 public class EstacionTrabajo : MonoBehaviour
 {
@@ -12,6 +14,15 @@ public class EstacionTrabajo : MonoBehaviour
     GameObject ingrediente;
     //Prefas de los ingredientes procesados
     public List<GameObject> imagenes;
+    //este objeto es el que controla que los procesos sean las correctos
+    private Control control;
+    //esta variable controla si explota la estación de trabajo
+    public bool explota = false;
+    private void Start()
+    {
+        //buscamos el objeto controlador
+        control = transform.parent.parent.GetComponent<Control>();
+    }
 
 
     //Al pulsar la estacion de trabajo
@@ -20,51 +31,78 @@ public class EstacionTrabajo : MonoBehaviour
         //buscamos el ingrediente
         ingrediente = GameObject.FindWithTag("Ingrediente");
         //si no esta en la posicion del sitio de preparados
-        if (ingrediente.transform.position != posicionFinal.position)
+        if (ingrediente != null)
         {
-            // guardamos el ingrediente el la variable que creara el ingrediente procesado
-            Ingrediente ingredienteAux = ingrediente.GetComponent<Ingrediente>();
-            SpriteRenderer imagen = ingrediente.GetComponent<SpriteRenderer>();
-            //si el ingrediente no se ha procesado
-            if (ingredienteAux.proceso == Ingrediente.Proceso.Ninguno)
+            if (ingrediente.transform.position != posicionFinal.position)
             {
-                //buscamos la estacion que se ha selecionado
-                switch (estacion)
+                // guardamos el ingrediente el la variable que creara el ingrediente procesado
+                Ingrediente ingredienteAux = ingrediente.GetComponent<Ingrediente>();
+                SpriteRenderer imagen = ingrediente.GetComponent<SpriteRenderer>();
+                //si el ingrediente no se ha procesado
+                if (ingredienteAux.proceso == Ingrediente.Proceso.Ninguno)
                 {
-                    case Estacion.Destileria:
-                        //procesamos el ingrediente
-                        ingredienteAux.proceso = Ingrediente.Proceso.Destilado;
-                        //cambiamos el sprite por el que le corresponda
-                        imagen.sprite = BuscarImagen(ingredienteAux.nombre, ingredienteAux.proceso);
-                        //mientras no esten los sprites finales
-                        imagen.color = BuscarColor(ingredienteAux.nombre, ingredienteAux.proceso);
-                        break;
-                    case Estacion.Cuchillo:
-                        //procesamos el ingrediente
-                        ingredienteAux.proceso = Ingrediente.Proceso.Cortado;
-                        //cambiamos el sprite por el que le corresponda
-                        imagen.sprite = BuscarImagen(ingredienteAux.nombre, ingredienteAux.proceso);
-                        //mientras no esten los sprites finales
-                        imagen.color = BuscarColor(ingredienteAux.nombre, ingredienteAux.proceso);
-                        break;
-                    case Estacion.Mortero:
-                        //procesamos el ingrediente
-                        ingredienteAux.proceso = Ingrediente.Proceso.Machacado;
-                        //cambiamos el sprite por el que le corresponda
-                        imagen.sprite = BuscarImagen(ingredienteAux.nombre, ingredienteAux.proceso);
-                        //mientras no esten los sprites finales
-                        imagen.color = BuscarColor(ingredienteAux.nombre, ingredienteAux.proceso);
-                        break;
+                    //buscamos la estacion que se ha selecionado
+                    switch (estacion)
+                    {
+                        case Estacion.Destileria:
+                            //Comprobamos que no hay una mezcla incompatible
+                            Comprobaciones(Ingrediente.Proceso.Destilado);
+                            if (!explota)
+                            {
+                                //procesamos el ingrediente
+                                ingredienteAux.proceso = Ingrediente.Proceso.Destilado;
+                                //cambiamos el sprite por el que le corresponda
+                                imagen.sprite = BuscarImagen(ingredienteAux.nombre, ingredienteAux.proceso);
+                                //mientras no esten los sprites finales
+                                imagen.color = BuscarColor(ingredienteAux.nombre, ingredienteAux.proceso);
+                            }
+                            break;
+                        case Estacion.Cuchillo:
+                            //Comprobamos que no hay una mezcla incompatible
+                            Comprobaciones(Ingrediente.Proceso.Cortado);
+                            if (!explota)
+                            {
+                                //procesamos el ingrediente
+                                ingredienteAux.proceso = Ingrediente.Proceso.Cortado;
+                                //cambiamos el sprite por el que le corresponda
+                                imagen.sprite = BuscarImagen(ingredienteAux.nombre, ingredienteAux.proceso);
+                                //mientras no esten los sprites finales
+                                imagen.color = BuscarColor(ingredienteAux.nombre, ingredienteAux.proceso);
+                            }
+                            break;
+                        case Estacion.Mortero:
+                            //Comprobamos que no hay una mezcla incompatible
+                            Comprobaciones(Ingrediente.Proceso.Machacado);
+                            if (!explota)
+                            {
+                                //procesamos el ingrediente
+                                ingredienteAux.proceso = Ingrediente.Proceso.Machacado;
+                                //cambiamos el sprite por el que le corresponda
+                                imagen.sprite = BuscarImagen(ingredienteAux.nombre, ingredienteAux.proceso);
+                                //mientras no esten los sprites finales
+                                imagen.color = BuscarColor(ingredienteAux.nombre, ingredienteAux.proceso);
+                            }
+                            break;
+                    }
                 }
+                if (!explota)
+                {
+                    //le decimos que no siga al cursor
+                    ingrediente.GetComponent<SeguirCursor>().seguir = false;
+                    //lo ponemos en el sitio de preparados
+                    ingrediente.transform.position = posicionFinal.position;
+                    //creamos el nuevo ingrediente procesado
+                    Instantiate(ingrediente);
+                }
+                else
+                {
+                    explota = false;
+                    Debug.Log("Explota");
+                    control.CambiarPuntaje(-5);
+                }
+                //eliminamos el ingrediente anterior
+                Destroy(ingrediente);
             }
-            //le decimos que no siga al cursor
-            ingrediente.GetComponent<SeguirCursor>().seguir = false;
-            //lo ponemos en el sitio de preparados
-            ingrediente.transform.position = posicionFinal.position;
-            //creamos el nuevo ingrediente procesado
-            Instantiate(ingrediente);
-            //eliminamos el ingrediente anterior
-            Destroy(ingrediente);
         }
     }
     private Sprite BuscarImagen(Ingrediente.IngredienteN nombre, Ingrediente.Proceso proceso)
@@ -93,6 +131,20 @@ public class EstacionTrabajo : MonoBehaviour
             }
         }
         return Color.white;
+    }
+    /// <summary>
+    /// Aqui se realizan las comprobaciones de los procesos
+    /// </summary>
+    private void Comprobaciones(Proceso proceso)
+    {
+        for (int i = 0; i < control.procesosI.Count; i++)
+        {
+            if (control.procesosI[i].nombre == ingrediente.GetComponent<Ingrediente>().nombre && control.procesosI[i].proceso == proceso)
+            {
+                explota = true;
+                break;
+            }
+        }
     }
     public enum Estacion { Destileria, Cuchillo, Mortero }
 }

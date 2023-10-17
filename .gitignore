@@ -70,6 +70,10 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+<<<<<<< HEAD
 Alchemia Ars/Temp/FSTimeGet-0b564dd50a41c2b4999bf19732c8ef38
 Alchemia Ars/Temp/UnityLockfile
 Alchemia Ars/Temp/workerlic
+Alchemia Ars/Temp/FSTimeGet-c0c2871490ff15342a461cb016d500ae
+=======
+>>>>>>> parent of a060454 (inicio)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Ingrediente;
 using static Pocion;
 
@@ -16,6 +17,7 @@ public class Control : MonoBehaviour
     public List<IngredientesIncompatibles> ingredientesI;
     //Lista de procesos que no son compatibles con los ingredientes
     public List<Ingrediente> procesosI;
+    public int puntajeFinal = 100;
 
     private void Start()
     {
@@ -144,6 +146,14 @@ public class Control : MonoBehaviour
             Debug.LogError("Exception: " + e.Message + "/nOrigen:" + e.Source + "/nTrazado:" + e.StackTrace);
         }
 
+    }
+    public void CambiarPuntaje(int puntaje)
+    {
+        puntajeFinal += puntaje;
+        if (puntajeFinal <= 0)
+        {
+            //pantalla final
+        }
     }
     /// <summary>
     /// Clase de los ingredeintes incompatibles
