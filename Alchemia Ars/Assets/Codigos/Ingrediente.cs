@@ -55,6 +55,6 @@ public class Ingrediente : MonoBehaviour
         return resultado;
     }
 
-    public enum IngredienteN {Mandragora,Cuerno_de_unicornio,Hierbas_magicas,Polvo_de_hadas,Ojo_de_ciclope,Ingrediente6}
+    public enum IngredienteN {Mandragora,Cuerno_de_unicornio,Hierbas_magicas,Alas_de_hadas,Ojo_de_ciclope,Araña}
     public enum Proceso {Ninguno,Destilado,Cortado,Machacado}
 }
