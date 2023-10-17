@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Ingrediente;
 using static Pocion;
 
@@ -149,6 +150,11 @@ public class Control : MonoBehaviour
     public void CambiarPuntaje(int puntaje)
     {
         puntajeFinal += puntaje;
+        if (puntajeFinal <= 0)
+        {
+            DontDestroyOnLoad(this);
+            SceneManager.LoadScene("PantallaFinal");
+        }
     }
     /// <summary>
     /// Clase de los ingredeintes incompatibles
