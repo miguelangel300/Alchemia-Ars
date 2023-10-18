@@ -55,6 +55,7 @@ public class Control : MonoBehaviour
                         Proceso proceso = convertirStringAProceso(componentes[i].Split("-")[1]);
                         //guardamos el ingrediente en la pocion
                         pocion.ingredientes.Add(new Ingrediente(nombre, proceso));
+
                     }
 
                 }
