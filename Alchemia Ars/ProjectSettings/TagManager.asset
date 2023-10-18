@@ -46,6 +46,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: fondo
+    uniqueID: 822841235
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: profesor
+    uniqueID: 3286850805
+    locked: 0
+  - name: mesa
+    uniqueID: 3019844999
     locked: 0
