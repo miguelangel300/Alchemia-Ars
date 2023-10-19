@@ -21,4 +21,8 @@ public class Seleccionar : MonoBehaviour
     {
         start = !start;
     }
+    public static void Inicio(bool inicio)
+    {
+        start = inicio;
+    }
 }

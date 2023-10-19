@@ -121,6 +121,7 @@ public class ControlCanvas : MonoBehaviour
     {
         Oscurecer();
         LimpiarInventario();
+        Seleccionar.start = true;
         control.GetComponent<Control>().puntajeFinal = 100;
         BotonSalir.SetActive(true);
         pantallaVictoria.SetActive(false);
