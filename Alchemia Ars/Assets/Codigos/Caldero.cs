@@ -241,7 +241,6 @@ public class Caldero : MonoBehaviour
                                     //el caldero explota
                                     explota = true;
 
-                                    control.CambiarPuntaje(-15);
                                 }
                                 break;
                             }

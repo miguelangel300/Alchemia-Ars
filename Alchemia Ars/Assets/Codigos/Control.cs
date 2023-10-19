@@ -153,7 +153,8 @@ public class Control : MonoBehaviour
         puntajeFinal += puntaje;
         if (puntajeFinal <= 0)
         {
-            //pantalla final
+            puntajeFinal = 0;
+            ControlCanvas.PantallaVictoria();
         }
     }
     /// <summary>

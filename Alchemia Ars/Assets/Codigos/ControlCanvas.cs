@@ -27,20 +27,21 @@ public class ControlCanvas : MonoBehaviour
     void Start()
     {
         control = GameObject.FindGameObjectWithTag("Escenario");
-        pantallaVictoria = transform.GetChild(2).gameObject;
-        pantallaDerrota = transform.GetChild(3).gameObject;
-        pantallaInicio = transform.GetChild(4).gameObject;
-        pantallaInterfaz = transform.GetChild(0).gameObject;
-        pantallaInterfazBotones = transform.GetChild(1).gameObject;
-        pantallaListaIngredientes = transform.GetChild(6).gameObject;
-        Imagen = transform.GetChild(5).gameObject;
+        pantallaVictoria = transform.GetChild(0).gameObject;
+        pantallaDerrota = transform.GetChild(1).gameObject;
+        pantallaInicio = transform.GetChild(2).gameObject;
+        pantallaInterfaz = transform.GetChild(5).gameObject;
+        pantallaInterfazBotones = transform.GetChild(6).gameObject;
+        pantallaListaIngredientes = transform.GetChild(4).gameObject;
+        Imagen = transform.GetChild(3).gameObject;
 
-        BotonCasa = transform.GetChild(1).GetChild(0).gameObject;
-        BotonMusica = transform.GetChild(1).GetChild(1).gameObject;
-        BotonSonido = transform.GetChild(1).GetChild(2).gameObject;
-        BotonSalir = transform.GetChild(1).GetChild(3).gameObject;
-        BotonIngredientes = transform.GetChild(1).GetChild(4).gameObject;
+        BotonCasa = pantallaInterfazBotones.transform.GetChild(0).gameObject;
+        BotonMusica = pantallaInterfazBotones.transform.GetChild(1).gameObject;
+        BotonSonido = pantallaInterfazBotones.transform.GetChild(2).gameObject;
+        BotonSalir = pantallaInterfazBotones.transform.GetChild(3).gameObject;
+        BotonIngredientes = pantallaInterfazBotones.transform.GetChild(4).gameObject;
         colorInicio = pantallaInicio.GetComponent<Image>().color;
+
 
         GameObject[] pos = GameObject.FindGameObjectsWithTag("SitioPociones");
         for (int i = 0; i < pos.Length; i++)
@@ -128,12 +129,12 @@ public class ControlCanvas : MonoBehaviour
         if (puntos < 50)
         {
             pantallaDerrota.SetActive(true);
-            pantallaDerrota.transform.GetChild(0).GetComponent<TextMeshPro>().text = "Nota Final: " + puntos;
+            pantallaDerrota.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Nota Final: " + puntos;
         }
         else
         {
             pantallaVictoria.SetActive(true);
-            pantallaVictoria.transform.GetChild(1).GetComponent<TextMeshPro>().text = "Nota Final: " + puntos;
+            pantallaVictoria.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Nota Final: " + puntos;
         }
 
     }
