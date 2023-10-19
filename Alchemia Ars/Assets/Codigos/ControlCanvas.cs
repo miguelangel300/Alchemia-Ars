@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +23,9 @@ public class ControlCanvas : MonoBehaviour
     public static GameObject BotonIngredientes;
     public static List<AlmacenarPocion> almacenes = new List<AlmacenarPocion>();
     static GameObject control;
-    Color colorInicio;
+    public Sprite[] notasDeExamen;
+    public static Sprite[] notasDeExamenI;
+    UnityEngine.Color colorInicio;
     private List<Pocion> pociones = new List<Pocion>();
     // Start is called before the first frame update
     void Start()
@@ -42,7 +46,7 @@ public class ControlCanvas : MonoBehaviour
         BotonIngredientes = pantallaInterfazBotones.transform.GetChild(4).gameObject;
         colorInicio = pantallaInicio.GetComponent<Image>().color;
 
-
+        notasDeExamenI = notasDeExamen;
         GameObject[] pos = GameObject.FindGameObjectsWithTag("SitioPociones");
         for (int i = 0; i < pos.Length; i++)
         {
@@ -77,6 +81,7 @@ public class ControlCanvas : MonoBehaviour
     public void Lista()
     {
         pantallaListaIngredientes.SetActive(!pantallaListaIngredientes.activeSelf);
+        BotonIngredientes.SetActive(!BotonIngredientes.activeSelf);
     }
     public void Examinar()
     {
@@ -84,9 +89,10 @@ public class ControlCanvas : MonoBehaviour
     }
     public void Aclarar()
     {
-        Color color = pantallaInicio.GetComponent<Image>().color;
+        UnityEngine.Color color = pantallaInicio.GetComponent<Image>().color;
         color = new Vector4(0, 0, 0, color.a - 0.01f);
         pantallaInicio.GetComponent<Image>().color = color;
+        pantallaInicio.transform.GetChild(0).gameObject.GetComponent<Image>().color = color;
         Imagen.GetComponent<RawImage>().color = color;
         pantallaInterfaz.GetComponent<Image>().color = color;
         if (color.a <= 0f)
@@ -104,7 +110,8 @@ public class ControlCanvas : MonoBehaviour
         BotonCasa.SetActive(false);
         BotonIngredientes.SetActive(false);
         pantallaListaIngredientes.SetActive(false);
-        pantallaInicio.GetComponent<Image>().color = colorInicio;
+        pantallaInicio.GetComponent<Image>().color = colorInicio; 
+        pantallaInicio.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         Imagen.GetComponent<RawImage>().color = colorInicio;
         pantallaInterfaz.GetComponent<Image>().color = colorInicio;
         Seleccionar.Inicio();
@@ -115,6 +122,8 @@ public class ControlCanvas : MonoBehaviour
         Oscurecer();
         LimpiarInventario();
         control.GetComponent<Control>().puntajeFinal = 100;
+        BotonSalir.SetActive(true);
+        pantallaVictoria.SetActive(false);
     }
     public void Salir()
     {
@@ -124,20 +133,44 @@ public class ControlCanvas : MonoBehaviour
     {
         LimpiarInventario();
         BotonIngredientes.SetActive(false);
+        BotonCasa.SetActive(true);
+        BotonSalir.SetActive(false);
         pantallaListaIngredientes.SetActive(false);
         puntos = control.GetComponent<Control>().puntajeFinal;
-        if (puntos < 50)
+        if (puntos >= 100)
         {
-            pantallaDerrota.SetActive(true);
-            pantallaDerrota.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Nota Final: " + puntos;
+            InsertarPuntos(notasDeExamenI[5]);
+        }
+        else if (puntos >= 70)
+        {
+            InsertarPuntos(notasDeExamenI[4]);
+        }
+        else if(puntos >=50)
+        {
+            InsertarPuntos(notasDeExamenI[3]);
+        }
+        else if(puntos >= 20)
+        {
+            InsertarPuntos(notasDeExamenI[2]);
+        }
+        else if (puntos >= 10)
+        {
+            InsertarPuntos(notasDeExamenI[1]);
         }
         else
         {
-            pantallaVictoria.SetActive(true);
-            pantallaVictoria.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Nota Final: " + puntos;
+            InsertarPuntos(notasDeExamenI[0]);
         }
 
     }
+
+    private static void InsertarPuntos(Sprite sprite)
+    {
+        pantallaVictoria.SetActive(true);
+        pantallaVictoria.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + puntos;
+        pantallaVictoria.GetComponent<Image>().sprite = sprite;
+    }
+
     public static void LimpiarInventario()
     {
 
@@ -150,6 +183,8 @@ public class ControlCanvas : MonoBehaviour
         }
         GameObject[] objetoI = GameObject.FindGameObjectsWithTag("Ingrediente");
         GameObject[] objetoP = GameObject.FindGameObjectsWithTag("Pocion");
+        GameObject objetoPF = GameObject.FindGameObjectWithTag("PocionFinal");
+        Destroy(objetoPF);
         for (int i = 0; i < objetoI.Length; i++)
         {
             Destroy(objetoI[i]);

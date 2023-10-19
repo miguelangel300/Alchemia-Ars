@@ -22,11 +22,13 @@ public class Caldero : MonoBehaviour
     public bool explota = false;
     //este objeto es el que controla que las mezclas sean las correctas
     private Control control;
+    private Animator animador;
 
     private void Start()
     {
         //buscamos el objeto controlador
         control = transform.parent.parent.GetComponent<Control>();
+        animador = transform.GetChild(0).GetComponent<Animator>();
     }
     public static void EliminarInventario()
     {
@@ -45,6 +47,8 @@ public class Caldero : MonoBehaviour
             //si hay ingrediente y no esta en el sitio de preparados 
             if (ingrediente.transform.position != posicionFinal.position)
             {
+                animador.SetBool("introduciendo", true);
+                Invoke("Salir", 0.4f);
                 //añade el ingrediente a la lista y destruye el ingrediente
                 ingredientes.Add(ingrediente.GetComponent<Ingrediente>());
                 Destroy(ingrediente);
@@ -55,6 +59,8 @@ public class Caldero : MonoBehaviour
             //si hay pocion y no esta en el sitio de preparados 
             if (pocion.transform.position != posicionFinal.position)
             {
+                animador.SetBool("introduciendo", true);
+                Invoke("Salir", 0.4f);
                 //añade el ingrediente a la lista y destruye el ingrediente
                 pociones.Add(pocion.GetComponent<Pocion>());
                 Destroy(pocion);
@@ -78,7 +84,10 @@ public class Caldero : MonoBehaviour
             CrearPocionFinal();
         }
     }
-
+    private void Salir()
+    {
+        animador.SetBool("introduciendo", false);
+    }
     private void CrearPocionFinal()
     {
         if (pociones.Count >= 2)

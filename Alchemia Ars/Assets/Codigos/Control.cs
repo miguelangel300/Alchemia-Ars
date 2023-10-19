@@ -19,9 +19,8 @@ public class Control : MonoBehaviour
     public List<Ingrediente> procesosI;
     public int puntajeFinal = 100;
 
-    private void Start()
-    {
-        //inicialización de valiables
+    private void Awake()
+    { //inicialización de valiables
         pocionFinal = new PocionFinal();
         pociones = new List<Pocion>();
         ingredientesI = new List<IngredientesIncompatibles>();
@@ -146,6 +145,11 @@ public class Control : MonoBehaviour
         {
             Debug.LogError("Exception: " + e.Message + "/nOrigen:" + e.Source + "/nTrazado:" + e.StackTrace);
         }
+
+    }
+    private void Start()
+    {
+       
 
     }
     public void CambiarPuntaje(int puntaje)

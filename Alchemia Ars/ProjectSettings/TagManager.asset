@@ -58,3 +58,6 @@ TagManager:
   - name: mesa
     uniqueID: 3019844999
     locked: 0
+  - name: Ingredientes
+    uniqueID: 4262100331
+    locked: 0
