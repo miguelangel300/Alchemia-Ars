@@ -10,6 +10,16 @@ public class Pocion : MonoBehaviour
     public PocionN nombre;
     //lista de ingredientes que componen la pocion
     public List<Ingrediente> ingredientes = new List<Ingrediente>();
+    private Pocion pocion;
+
+    public Pocion()
+    {
+    }
+
+    public Pocion(Pocion pocion)
+    {
+        this.pocion = pocion;
+    }
 
     /// <summary>
     /// convierte un string a un enum del nombre de una pocion
