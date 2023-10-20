@@ -2090,8 +2090,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.598
   m_LocalBounds:
-    m_Center: {x: -0.015300006, y: -0.046200007, z: 0}
-    m_Extent: {x: 0.54349995, y: 0.66499996, z: 0}
+    m_Center: {x: -0.011949986, y: -0.041949987, z: 0}
+    m_Extent: {x: 0.54935, y: 0.66055, z: 0}
   m_PointLightInnerAngle: 63.885376
   m_PointLightOuterAngle: 238.9366
   m_PointLightInnerRadius: 1.87
@@ -2406,6 +2406,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c51070fb46c281146ad138112c04a4bd, type: 3}
   - {fileID: 8300000, guid: c30c4a7aaa5472e4cbf0b09a45a3042a, type: 3}
   saudio: {fileID: 0}
+  animacion: {fileID: 0}
 --- !u!65 &786366516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2603,13 +2604,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Hola soy tu examinador de la escuela Alchemia Ars.
 
-    
 
-    Por favor
-    mira la nota que esta en tu mesa alli encontraras el objetivo con las pociones
-    a mezclar para realizarlo y los ingredientes para preparar dichas pociones.
 
-    
+    Por favor mira
+    la nota que esta en tu mesa alli encontraras el objetivo con las pociones a mezclar
+    para realizarlo y los ingredientes para preparar dichas pociones.
+
+
 
     Usa
     las herramientas de la mesa para preparar los ingredientes, usa el caldero para
@@ -2648,8 +2649,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4023,8 +4024,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.598
   m_LocalBounds:
-    m_Center: {x: 0.010650009, y: -0.039000005, z: 0}
-    m_Extent: {x: 0.55114996, y: 0.63629997, z: 0}
+    m_Center: {x: 0.007499993, y: -0.050199986, z: 0}
+    m_Extent: {x: 0.542, y: 0.6398, z: 0}
   m_PointLightInnerAngle: 63.885376
   m_PointLightOuterAngle: 238.9366
   m_PointLightInnerRadius: 1.87
@@ -5116,6 +5117,7 @@ MonoBehaviour:
   audios:
   - {fileID: 8300000, guid: 9bfedd4d0008f32409b0d8e4f195f4f4, type: 3}
   saudio: {fileID: 0}
+  animacion: {fileID: 0}
 --- !u!82 &1418501778
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6507,6 +6509,7 @@ MonoBehaviour:
   audios:
   - {fileID: 8300000, guid: 9bfedd4d0008f32409b0d8e4f195f4f4, type: 3}
   saudio: {fileID: 0}
+  animacion: {fileID: 0}
 --- !u!82 &1550668618
 AudioSource:
   m_ObjectHideFlags: 0
