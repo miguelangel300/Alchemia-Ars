@@ -121,7 +121,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UnicornioCuerno_417x597_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1451
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6f5b75856888d408161599351d881f
+      internalID: -257444419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnicornioCuerno_417x597_1
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1451
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333d17a42af4798468b7165309626957
+      internalID: -737757733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnicornioCuerno_417x597_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 854
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8004fef07f7588643938d0aa734eac2e
+      internalID: -180045257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnicornioCuerno_417x597_3
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 854
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe37bfe9dde2c0a40a897028747012cb
+      internalID: -1160812983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnicornioCuerno_417x597_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 257
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc9de1316acb5f488f4f486fdc9dbc6
+      internalID: -442057221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +237,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UnicornioCuerno_417x597_0: -257444419
+      UnicornioCuerno_417x597_1: -737757733
+      UnicornioCuerno_417x597_2: -180045257
+      UnicornioCuerno_417x597_3: -1160812983
+      UnicornioCuerno_417x597_4: -442057221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

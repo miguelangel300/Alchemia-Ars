@@ -121,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Alasdehada_417x597_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 427
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79af27d534babec46b03e96440ea0832
+      internalID: 1029577698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alasdehada_417x597_1
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 427
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ec5802168b2944fb33617435046c20
+      internalID: -1515138864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alasdehada_417x597_2
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 427
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0baeced17241383468a4df2e80cc76c2
+      internalID: -232775551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alasdehada_417x597_3
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 427
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e601ab4768fd14a95b3d33a7a5c62a
+      internalID: 1822764337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +216,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Alasdehada_417x597_0: 1029577698
+      Alasdehada_417x597_1: -1515138864
+      Alasdehada_417x597_2: -232775551
+      Alasdehada_417x597_3: 1822764337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

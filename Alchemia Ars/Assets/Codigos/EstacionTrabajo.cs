@@ -14,6 +14,8 @@ public class EstacionTrabajo : MonoBehaviour
     GameObject ingrediente;
     //Prefas de los ingredientes procesados
     public List<GameObject> imagenes;
+    public Sprite imageneS;
+    private Sprite imageneO;
     //este objeto es el que controla que los procesos sean las correctos
     private Control control;
     //esta variable controla si explota la estación de trabajo
@@ -21,17 +23,39 @@ public class EstacionTrabajo : MonoBehaviour
     public AudioClip[] audios;
     public AudioSource saudio;
     public Animator animacion;
+    public SpriteRenderer SpriteHerramienta;
     private void Start()
     {
         //buscamos el objeto controlador
         control = transform.parent.parent.GetComponent<Control>();
         saudio = GetComponent<AudioSource>();
         animacion = GetComponent<Animator>();
+        imageneO = GetComponent<SpriteRenderer>().sprite;
+        SpriteHerramienta = gameObject.GetComponent<SpriteRenderer>();
     }
 
     private void Fabricando()
     {
         animacion.SetBool("fabricando", false);
+    }
+    private void OnMouseOver()
+    {
+        //buscamos el ingrediente
+        ingrediente = GameObject.FindWithTag("Ingrediente");
+        //si no esta en la posicion del sitio de preparados
+        if (ingrediente != null)
+        {
+            if (ingrediente.transform.position != posicionFinal.position && imageneS != null && SpriteHerramienta.sprite != imageneS) 
+            {
+                animacion.enabled = false;
+                SpriteHerramienta.sprite = imageneS;
+            }
+        }
+    }
+    private void OnMouseExit()
+    {
+        animacion.enabled = true;
+
     }
     //Al pulsar la estacion de trabajo
     private void OnMouseDown()
@@ -51,8 +75,8 @@ public class EstacionTrabajo : MonoBehaviour
                 if (ingredienteAux.proceso == Ingrediente.Proceso.Ninguno)
                 {
                     saudio.Play();
-                    animacion.SetBool("fabricando",true);
-                    Invoke("Fabricando",0.6f);
+                    animacion.SetBool("fabricando", true);
+                    Invoke("Fabricando", 0.6f);
                     //buscamos la estacion que se ha selecionado
                     switch (estacion)
                     {

@@ -2090,8 +2090,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.598
   m_LocalBounds:
-    m_Center: {x: -0.011949986, y: -0.041949987, z: 0}
-    m_Extent: {x: 0.54935, y: 0.66055, z: 0}
+    m_Center: {x: -0.015899986, y: -0.045350015, z: 0}
+    m_Extent: {x: 0.5382, y: 0.66195, z: 0}
   m_PointLightInnerAngle: 63.885376
   m_PointLightOuterAngle: 238.9366
   m_PointLightInnerRadius: 1.87
@@ -2280,6 +2280,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagen: {fileID: 9186602930500808874, guid: 769f902b1fbc4484b8f4c675f23fd8d8, type: 3}
+  imagenes:
+  - {fileID: -1606482100, guid: b045276eb27857943b34e0ccdbbd7b57, type: 3}
+  - {fileID: -4766116, guid: b045276eb27857943b34e0ccdbbd7b57, type: 3}
+  - {fileID: 1492854345, guid: b045276eb27857943b34e0ccdbbd7b57, type: 3}
+  velocidad: 0.1
 --- !u!1 &786366511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,12 +2406,14 @@ MonoBehaviour:
   - {fileID: 2497783720769745574, guid: 7a21a7187c0200e43bcab01eb503c014, type: 3}
   - {fileID: 2497783720769745574, guid: bf20b6cccfa8385419aba1cd90b49098, type: 3}
   - {fileID: 2497783720769745574, guid: 0862a2c588d2c2542ad871db6ec647e2, type: 3}
+  imageneS: {fileID: 1862620437, guid: e919d52173bee294e93b1d750a2fad16, type: 3}
   explota: 0
   audios:
   - {fileID: 8300000, guid: c51070fb46c281146ad138112c04a4bd, type: 3}
   - {fileID: 8300000, guid: c30c4a7aaa5472e4cbf0b09a45a3042a, type: 3}
   saudio: {fileID: 0}
   animacion: {fileID: 0}
+  SpriteHerramienta: {fileID: 0}
 --- !u!65 &786366516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3957,6 +3964,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagen: {fileID: 9186602930500808874, guid: ab89d9f25eb0ad14cb242dc5fae75c91, type: 3}
+  imagenes:
+  - {fileID: 1032668423, guid: 9fc66755802bc254fb51adb181a6d17f, type: 3}
+  - {fileID: -1706222058, guid: 9fc66755802bc254fb51adb181a6d17f, type: 3}
+  - {fileID: 2043029519, guid: 9fc66755802bc254fb51adb181a6d17f, type: 3}
+  - {fileID: 1105912484, guid: 9fc66755802bc254fb51adb181a6d17f, type: 3}
+  - {fileID: 55605617, guid: 9fc66755802bc254fb51adb181a6d17f, type: 3}
+  velocidad: 0.1
 --- !u!1 &1236738502
 GameObject:
   m_ObjectHideFlags: 0
@@ -4024,8 +4038,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.598
   m_LocalBounds:
-    m_Center: {x: 0.007499993, y: -0.050199986, z: 0}
-    m_Extent: {x: 0.542, y: 0.6398, z: 0}
+    m_Center: {x: 0.014950007, y: -0.041749984, z: 0}
+    m_Extent: {x: 0.54945004, y: 0.63195, z: 0}
   m_PointLightInnerAngle: 63.885376
   m_PointLightOuterAngle: 238.9366
   m_PointLightInnerRadius: 1.87
@@ -4510,7 +4524,7 @@ Transform:
   m_GameObject: {fileID: 1376251130}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.039999485, y: -0.43000007, z: 0}
+  m_LocalPosition: {x: -0.04, y: -0.43000007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5113,11 +5127,13 @@ MonoBehaviour:
   - {fileID: 2497783720769745574, guid: 7a21a7187c0200e43bcab01eb503c014, type: 3}
   - {fileID: 2497783720769745574, guid: bf20b6cccfa8385419aba1cd90b49098, type: 3}
   - {fileID: 2497783720769745574, guid: 0862a2c588d2c2542ad871db6ec647e2, type: 3}
+  imageneS: {fileID: 0}
   explota: 0
   audios:
   - {fileID: 8300000, guid: 9bfedd4d0008f32409b0d8e4f195f4f4, type: 3}
   saudio: {fileID: 0}
   animacion: {fileID: 0}
+  SpriteHerramienta: {fileID: 0}
 --- !u!82 &1418501778
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6106,6 +6122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagen: {fileID: 9186602930500808874, guid: 2f332862f9839f34ab1e76e020ff3c65, type: 3}
+  imagenes:
+  - {fileID: 1029577698, guid: cdfe41f5aa142bb43a693fed2dc4a907, type: 3}
+  - {fileID: -1515138864, guid: cdfe41f5aa142bb43a693fed2dc4a907, type: 3}
+  - {fileID: -232775551, guid: cdfe41f5aa142bb43a693fed2dc4a907, type: 3}
+  - {fileID: 1822764337, guid: cdfe41f5aa142bb43a693fed2dc4a907, type: 3}
+  velocidad: 0.1
 --- !u!1 &1516441959
 GameObject:
   m_ObjectHideFlags: 0
@@ -6505,11 +6527,13 @@ MonoBehaviour:
   - {fileID: 2497783720769745574, guid: 7a21a7187c0200e43bcab01eb503c014, type: 3}
   - {fileID: 2497783720769745574, guid: bf20b6cccfa8385419aba1cd90b49098, type: 3}
   - {fileID: 2497783720769745574, guid: 0862a2c588d2c2542ad871db6ec647e2, type: 3}
+  imageneS: {fileID: 0}
   explota: 0
   audios:
   - {fileID: 8300000, guid: 9bfedd4d0008f32409b0d8e4f195f4f4, type: 3}
   saudio: {fileID: 0}
   animacion: {fileID: 0}
+  SpriteHerramienta: {fileID: 0}
 --- !u!82 &1550668618
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7509,6 +7533,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagen: {fileID: 9186602930500808874, guid: 6beed4243ad9ef147ac5106143b5c4db, type: 3}
+  imagenes:
+  - {fileID: -936688756, guid: e6abd22128ee61041bbfc13251443339, type: 3}
+  - {fileID: -590695624, guid: e6abd22128ee61041bbfc13251443339, type: 3}
+  - {fileID: 1378851751, guid: e6abd22128ee61041bbfc13251443339, type: 3}
+  - {fileID: -2034474161, guid: e6abd22128ee61041bbfc13251443339, type: 3}
+  - {fileID: -1074245438, guid: e6abd22128ee61041bbfc13251443339, type: 3}
+  - {fileID: 258141138, guid: e6abd22128ee61041bbfc13251443339, type: 3}
+  - {fileID: 1733481127, guid: e6abd22128ee61041bbfc13251443339, type: 3}
+  velocidad: 0.1
 --- !u!1 &1808219832
 GameObject:
   m_ObjectHideFlags: 0
@@ -8095,6 +8128,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagen: {fileID: 9186602930500808874, guid: 195f2b81ab74e5440a83a6056285dabc, type: 3}
+  imagenes:
+  - {fileID: 1151012010, guid: eea3bf91d94e83a48b7c92b58f5ef2a1, type: 3}
+  - {fileID: -1124588836, guid: eea3bf91d94e83a48b7c92b58f5ef2a1, type: 3}
+  - {fileID: -1155969589, guid: eea3bf91d94e83a48b7c92b58f5ef2a1, type: 3}
+  velocidad: 0.1
 --- !u!1 &1940929795
 GameObject:
   m_ObjectHideFlags: 0
@@ -8716,6 +8754,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagen: {fileID: 9186602930500808874, guid: 341da75405bb7e8459b394126a26de3e, type: 3}
+  imagenes:
+  - {fileID: -257444419, guid: 6348f93cc1cc2814c9040551d2159caa, type: 3}
+  - {fileID: -737757733, guid: 6348f93cc1cc2814c9040551d2159caa, type: 3}
+  - {fileID: -180045257, guid: 6348f93cc1cc2814c9040551d2159caa, type: 3}
+  - {fileID: -1160812983, guid: 6348f93cc1cc2814c9040551d2159caa, type: 3}
+  - {fileID: -442057221, guid: 6348f93cc1cc2814c9040551d2159caa, type: 3}
+  velocidad: 0.1
 --- !u!65 &2064871068
 BoxCollider:
   m_ObjectHideFlags: 0
