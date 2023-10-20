@@ -24,6 +24,7 @@ public class EstacionTrabajo : MonoBehaviour
     {
         //buscamos el objeto controlador
         control = transform.parent.parent.GetComponent<Control>();
+        saudio = GetComponent<AudioSource>();
     }
 
 

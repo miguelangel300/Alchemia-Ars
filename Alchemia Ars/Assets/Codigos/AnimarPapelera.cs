@@ -26,7 +26,7 @@ public class AnimarPapelera : MonoBehaviour
     public void Maullar()
     {
         sonido.Play();
-        Invoke("Maullar", Random.Range(3, 15));
+        Invoke("Maullar", Random.Range(10, 25));
     }
     public void CancelarMaullar()
     {
