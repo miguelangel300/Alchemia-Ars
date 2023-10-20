@@ -121,7 +121,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ojodeciclope_417_597_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1451
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9153cad00fdb94288f08936fd97e63
+      internalID: -936688756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ojodeciclope_417_597_1
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1451
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59eef932599c9c44bae5b1dab253ebf9
+      internalID: -590695624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ojodeciclope_417_597_2
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1451
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f80280e6acd434989180a6efba4c65
+      internalID: 1378851751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ojodeciclope_417_597_3
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 1451
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13af642d1f06da4887720df42df67bc
+      internalID: -2034474161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ojodeciclope_417_597_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 854
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee22996fbdd563449390d401df695f3
+      internalID: -1074245438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ojodeciclope_417_597_5
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 854
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43d354827896234a863775730b42393
+      internalID: 258141138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ojodeciclope_417_597_6
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 854
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223f3961c507e574ba21c0ce666dccf5
+      internalID: 1733481127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +279,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ojodeciclope_417_597_0: -936688756
+      ojodeciclope_417_597_1: -590695624
+      ojodeciclope_417_597_2: 1378851751
+      ojodeciclope_417_597_3: -2034474161
+      ojodeciclope_417_597_4: -1074245438
+      ojodeciclope_417_597_5: 258141138
+      ojodeciclope_417_597_6: 1733481127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
