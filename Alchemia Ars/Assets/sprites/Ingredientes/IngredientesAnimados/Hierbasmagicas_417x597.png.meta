@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Hierbasmagicas_417x597_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1451
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167c299edd8c6ed4687636882b7e1f24
+      internalID: -1606482100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbasmagicas_417x597_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 854
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb6891edeeff2140b8c80ccf659815a
+      internalID: -4766116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hierbasmagicas_417x597_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 257
+        width: 417
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416716402de27b74eaac235b9f31d8f3
+      internalID: 1492854345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hierbasmagicas_417x597_0: -1606482100
+      Hierbasmagicas_417x597_1: -4766116
+      Hierbasmagicas_417x597_2: 1492854345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
