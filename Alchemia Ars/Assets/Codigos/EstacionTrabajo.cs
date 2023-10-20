@@ -20,14 +20,19 @@ public class EstacionTrabajo : MonoBehaviour
     public bool explota = false;
     public AudioClip[] audios;
     public AudioSource saudio;
+    public Animator animacion;
     private void Start()
     {
         //buscamos el objeto controlador
         control = transform.parent.parent.GetComponent<Control>();
         saudio = GetComponent<AudioSource>();
+        animacion = GetComponent<Animator>();
     }
 
-
+    private void Fabricando()
+    {
+        animacion.SetBool("fabricando", false);
+    }
     //Al pulsar la estacion de trabajo
     private void OnMouseDown()
     {
@@ -46,6 +51,8 @@ public class EstacionTrabajo : MonoBehaviour
                 if (ingredienteAux.proceso == Ingrediente.Proceso.Ninguno)
                 {
                     saudio.Play();
+                    animacion.SetBool("fabricando",true);
+                    Invoke("Fabricando",0.6f);
                     //buscamos la estacion que se ha selecionado
                     switch (estacion)
                     {
