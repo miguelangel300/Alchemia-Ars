@@ -5,11 +5,12 @@ using UnityEngine;
 public class AnimarPapelera : MonoBehaviour
 {
     Animator animador;
+    AudioSource sonido;
     // Start is called before the first frame update
     void Start()
     {
         animador = GetComponent<Animator>();
-
+        sonido = GetComponent<AudioSource>();
 
     }
     private void OnMouseOver()
@@ -21,5 +22,14 @@ public class AnimarPapelera : MonoBehaviour
     {
         animador.SetBool("comiendo", false);
 
+    }
+    public void Maullar()
+    {
+        sonido.Play();
+        Invoke("Maullar", Random.Range(3, 15));
+    }
+    public void CancelarMaullar()
+    {
+        CancelInvoke("Maullar");
     }
 }

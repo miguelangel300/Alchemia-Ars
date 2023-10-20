@@ -18,6 +18,8 @@ public class EstacionTrabajo : MonoBehaviour
     private Control control;
     //esta variable controla si explota la estación de trabajo
     public bool explota = false;
+    public AudioClip[] audios;
+    public AudioSource saudio;
     private void Start()
     {
         //buscamos el objeto controlador
@@ -28,6 +30,7 @@ public class EstacionTrabajo : MonoBehaviour
     //Al pulsar la estacion de trabajo
     private void OnMouseDown()
     {
+        saudio.clip = audios[Random.Range(0, audios.Length)];
         //buscamos el ingrediente
         ingrediente = GameObject.FindWithTag("Ingrediente");
         //si no esta en la posicion del sitio de preparados
@@ -41,6 +44,7 @@ public class EstacionTrabajo : MonoBehaviour
                 //si el ingrediente no se ha procesado
                 if (ingredienteAux.proceso == Ingrediente.Proceso.Ninguno)
                 {
+                    saudio.Play();
                     //buscamos la estacion que se ha selecionado
                     switch (estacion)
                     {

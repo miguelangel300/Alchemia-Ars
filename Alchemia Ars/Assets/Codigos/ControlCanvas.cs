@@ -25,6 +25,7 @@ public class ControlCanvas : MonoBehaviour
     static GameObject control;
     public Sprite[] notasDeExamen;
     public static Sprite[] notasDeExamenI;
+    public static AnimarPapelera papelera;
     UnityEngine.Color colorInicio;
     private List<Pocion> pociones = new List<Pocion>();
     // Start is called before the first frame update
@@ -52,7 +53,7 @@ public class ControlCanvas : MonoBehaviour
         {
             almacenes.Add(pos[i].GetComponent<AlmacenarPocion>());
         }
-
+        papelera = GameObject.FindWithTag("Papelera").GetComponent<AnimarPapelera>();
         pociones = control.GetComponent<Control>().pocionFinal.pociones;
         RellenarLista();
 
@@ -72,7 +73,7 @@ public class ControlCanvas : MonoBehaviour
                 for (int l = 0; l < nombreString.Length; l++)
                 {
 
-                    texto.text += nombreString[l]+" ";
+                    texto.text += nombreString[l] + " ";
                 }
             }
         }
@@ -82,6 +83,16 @@ public class ControlCanvas : MonoBehaviour
     {
         pantallaListaIngredientes.SetActive(!pantallaListaIngredientes.activeSelf);
         BotonIngredientes.SetActive(!BotonIngredientes.activeSelf);
+        if (BotonIngredientes.activeSelf)
+        {
+            BotonIngredientes.GetComponent<AudioSource>().Play();
+
+        }
+        if (pantallaListaIngredientes.activeSelf)
+        {
+            pantallaListaIngredientes.GetComponent<AudioSource>().Play();
+
+        }
     }
     public void Examinar()
     {
@@ -100,6 +111,7 @@ public class ControlCanvas : MonoBehaviour
             pantallaInicio.SetActive(false);
             BotonIngredientes.SetActive(true);
             BotonCasa.SetActive(true);
+            Sonidos(true);
             CancelInvoke();
             Seleccionar.Inicio();
         }
@@ -110,10 +122,11 @@ public class ControlCanvas : MonoBehaviour
         BotonCasa.SetActive(false);
         BotonIngredientes.SetActive(false);
         pantallaListaIngredientes.SetActive(false);
-        pantallaInicio.GetComponent<Image>().color = colorInicio; 
+        pantallaInicio.GetComponent<Image>().color = colorInicio;
         pantallaInicio.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         Imagen.GetComponent<RawImage>().color = colorInicio;
         pantallaInterfaz.GetComponent<Image>().color = colorInicio;
+        Sonidos(false);
         Seleccionar.Inicio();
 
     }
@@ -137,6 +150,7 @@ public class ControlCanvas : MonoBehaviour
         BotonCasa.SetActive(true);
         BotonSalir.SetActive(false);
         pantallaListaIngredientes.SetActive(false);
+        Sonidos(false);
         puntos = control.GetComponent<Control>().puntajeFinal;
         if (puntos >= 100)
         {
@@ -146,11 +160,11 @@ public class ControlCanvas : MonoBehaviour
         {
             InsertarPuntos(notasDeExamenI[4]);
         }
-        else if(puntos >=50)
+        else if (puntos >= 50)
         {
             InsertarPuntos(notasDeExamenI[3]);
         }
-        else if(puntos >= 20)
+        else if (puntos >= 20)
         {
             InsertarPuntos(notasDeExamenI[2]);
         }
@@ -170,6 +184,24 @@ public class ControlCanvas : MonoBehaviour
         pantallaVictoria.SetActive(true);
         pantallaVictoria.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + puntos;
         pantallaVictoria.GetComponent<Image>().sprite = sprite;
+    }
+    public static void Sonidos(bool sonido)
+    {
+        if (sonido)
+        {
+            papelera.Maullar();
+
+        }
+        else
+        {
+
+            papelera.CancelarMaullar();
+        }
+
+    }
+    public void Musica(bool sonido)
+    {
+
     }
 
     public static void LimpiarInventario()
