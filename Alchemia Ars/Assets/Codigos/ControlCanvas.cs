@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class ControlCanvas : MonoBehaviour
@@ -26,6 +27,9 @@ public class ControlCanvas : MonoBehaviour
     public Sprite[] notasDeExamen;
     public static Sprite[] notasDeExamenI;
     public static AnimarPapelera papelera;
+    public AudioMixer audios;
+    private float volumenMusica = 0;
+    private float volumenSonidos = 0;
     UnityEngine.Color colorInicio;
     private List<Pocion> pociones = new List<Pocion>();
     // Start is called before the first frame update
@@ -199,8 +203,35 @@ public class ControlCanvas : MonoBehaviour
         }
 
     }
-    public void Musica(bool sonido)
+
+    public void Musica()
     {
+        if (volumenMusica == 0)
+        {
+            audios.SetFloat("VolumenMusica", -80f);
+            volumenMusica = -80f;
+        }
+        else
+        {
+            audios.SetFloat("VolumenMusica", 0);
+            volumenMusica = 0;
+
+        }
+    }
+    public void Sonido()
+    {
+
+        if (volumenSonidos == 0)
+        {
+            audios.SetFloat("VolumenSonidos", -80f);
+            volumenSonidos = -80f;
+        }
+        else
+        {
+            audios.SetFloat("VolumenSonidos", 0);
+            volumenSonidos = 0;
+
+        }
 
     }
 

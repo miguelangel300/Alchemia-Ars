@@ -45,7 +45,7 @@ public class EstacionTrabajo : MonoBehaviour
         //si no esta en la posicion del sitio de preparados
         if (ingrediente != null)
         {
-            if (ingrediente.transform.position != posicionFinal.position && imageneS != null && SpriteHerramienta.sprite != imageneS) 
+            if (ingrediente.transform.position != posicionFinal.position && imageneS != null && SpriteHerramienta.sprite != imageneS)
             {
                 animacion.enabled = false;
                 SpriteHerramienta.sprite = imageneS;
@@ -57,7 +57,11 @@ public class EstacionTrabajo : MonoBehaviour
         animacion.enabled = true;
         //buscamos el ingrediente
         ingrediente = GameObject.FindWithTag("Ingrediente");
-        ingrediente.GetComponent<SpriteRenderer>().enabled = true;
+        if (ingrediente != null)
+        {
+            ingrediente.GetComponent<SpriteRenderer>().enabled = true;
+
+        }
 
     }
     //Al pulsar la estacion de trabajo
