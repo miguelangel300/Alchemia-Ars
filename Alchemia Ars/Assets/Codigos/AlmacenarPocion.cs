@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PocionFinal;
 
 public class AlmacenarPocion : MonoBehaviour
 {
     //Ingrediente del plato
     public int indice = -1;
     private Sprite spriteOriginal;
+    public Sprite spriteSoporteS;
+    public Sprite spriteSoporte;
     public GameObject[] pociones;
     public bool siguiendo = false;
+    public Transform posicionPrepatados;
 
     private void Start()
     {
@@ -20,6 +24,18 @@ public class AlmacenarPocion : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = spriteOriginal;
         GetComponent<SpriteRenderer>().color = Color.white;
 
+    }
+    private void OnMouseOver()
+    {
+        GameObject pocion = GameObject.FindWithTag("Pocion");
+        if (pocion != null && pocion.transform.position != posicionPrepatados.position)
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteSoporteS;
+        }
+    }
+    private void OnMouseExit()
+    {
+        transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteSoporte;
     }
     private void OnMouseDown()
     {

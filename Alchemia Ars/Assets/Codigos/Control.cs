@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 using static Ingrediente;
 using static Pocion;
 
@@ -147,10 +148,78 @@ public class Control : MonoBehaviour
         }
 
     }
-    private void Start()
+    public void Aletorizar()
     {
-       
-
+        int pocion = UnityEngine.Random.Range(2, 5);
+        pocionFinal.pociones = new List<Pocion>();
+        List<int> indices = new List<int>();
+        bool enReceta = false;
+        for (int i = 0; i < pocion; i++)
+        {
+            int indicesaux = UnityEngine.Random.Range(0, pociones.Count);
+            for (int j = 0; j < indices.Count; j++)
+            {
+                if (indices[j] == indicesaux)
+                {
+                    enReceta = true;
+                }
+            }
+            if (enReceta)
+            {
+                i--;
+            }
+            else
+            {
+                pocionFinal.pociones.Add(pociones[indicesaux]);
+            }
+        }
+    }
+    public void Demo()
+    {
+        pocionFinal.pociones = new List<Pocion>();
+        string linea;
+        try
+        {
+            //Leemos el archivo que contiene el nombre de la pocion final y las pociones que la componen
+            StreamReader sr = new StreamReader("Items\\PocionFinal.txt");
+            //leemos la primera linea
+            linea = sr.ReadLine();
+            //contador que nos dice en que linea estamos
+            int cont = 0;
+            //mientras haya lineas
+            while (linea != null)
+            {
+                //si es la primera linea
+                if (cont == 0)
+                {
+                    //guardamos el nombre de la pocion final
+                    pocionFinal.nombre = linea;
+                }
+                else
+                {
+                    //si no, convertimos el string al nombre de la pcion 
+                    PocionN nombre = convertirStringAPocionN(linea);
+                    //buscamos en las pociones existentes
+                    for (int i = 0; i < pociones.Count; i++)
+                    {
+                        //si la pocion que esta en el archivo de pocion final esta en la lista de pociones que tenemos
+                        if (pociones[i].nombre == nombre)
+                        {
+                            //la guardamos
+                            pocionFinal.pociones.Add(pociones[i]);
+                        }
+                    }
+                }
+                //leemos la siguiente linea
+                linea = sr.ReadLine();
+                //sumamos al contador
+                cont++;
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Exception: " + e.Message + "/nOrigen:" + e.Source + "/nTrazado:" + e.StackTrace);
+        }
     }
     public void CambiarPuntaje(int puntaje)
     {

@@ -28,6 +28,7 @@ public class ControlCanvas : MonoBehaviour
     public static Sprite[] notasDeExamenI;
     public static AnimarPapelera papelera;
     public static bool aletorizar = false;
+    public static GameObject check;
     public AudioMixer audios;
     private float volumenMusica = 0;
     private float volumenSonidos = 0;
@@ -52,6 +53,8 @@ public class ControlCanvas : MonoBehaviour
         BotonIngredientes = pantallaInterfazBotones.transform.GetChild(4).gameObject;
         colorInicio = pantallaInicio.GetComponent<Image>().color;
 
+        check = pantallaInterfazBotones.transform.GetChild(5).gameObject;
+
         notasDeExamenI = notasDeExamen;
         GameObject[] pos = GameObject.FindGameObjectsWithTag("SitioPociones");
         for (int i = 0; i < pos.Length; i++)
@@ -65,6 +68,7 @@ public class ControlCanvas : MonoBehaviour
     }
     public void RellenarLista()
     {
+        pociones = control.GetComponent<Control>().pocionFinal.pociones;
         TextMeshProUGUI texto = pantallaListaIngredientes.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         texto.text = "La pocion final ha realizar se llama " +
             control.GetComponent<Control>().pocionFinal.nombre + ", y Las pociones a mezclar para craftearla son:";
@@ -113,7 +117,19 @@ public class ControlCanvas : MonoBehaviour
         pantallaInterfaz.GetComponent<Image>().color = color;
         if (color.a <= 0f)
         {
-            aletorizar = pantallaInicio.transform.GetChild(2).GetChild(0).gameObject.GetComponent<Toggle>().isOn;
+            aletorizar = check.GetComponent<Toggle>().isOn;
+            if (aletorizar)
+            {
+                control.GetComponent<Control>().Aletorizar();
+            }
+            else
+            {
+                control.GetComponent<Control>().Demo();
+
+            }
+
+            RellenarLista();
+            check.SetActive(false);
             pantallaInicio.SetActive(false);
             BotonSalir.SetActive(false);
             BotonIngredientes.SetActive(true);
@@ -129,6 +145,7 @@ public class ControlCanvas : MonoBehaviour
         BotonCasa.SetActive(false);
         BotonIngredientes.SetActive(false);
         pantallaListaIngredientes.SetActive(false);
+        check.SetActive(true);
         pantallaInicio.GetComponent<Image>().color = colorInicio;
         pantallaInicio.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         Imagen.GetComponent<RawImage>().color = colorInicio;
