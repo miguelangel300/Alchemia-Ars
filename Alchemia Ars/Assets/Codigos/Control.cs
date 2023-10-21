@@ -171,6 +171,7 @@ public class Control : MonoBehaviour
             else
             {
                 pocionFinal.pociones.Add(pociones[indicesaux]);
+                indices.Add(indicesaux);
             }
         }
     }
