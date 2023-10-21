@@ -19,6 +19,7 @@ public class Control : MonoBehaviour
     //Lista de procesos que no son compatibles con los ingredientes
     public List<Ingrediente> procesosI;
     public int puntajeFinal = 100;
+    public Texture2D[] imagenesCursor;
 
     private void Awake()
     { //inicialización de valiables
@@ -147,6 +148,18 @@ public class Control : MonoBehaviour
             Debug.LogError("Exception: " + e.Message + "/nOrigen:" + e.Source + "/nTrazado:" + e.StackTrace);
         }
 
+    }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            UnityEngine.Cursor.SetCursor(imagenesCursor[1], new Vector2(0,0), CursorMode.Auto);
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            UnityEngine.Cursor.SetCursor(imagenesCursor[0], new Vector2(0, 0), CursorMode.Auto);
+
+        }
     }
     public void Aletorizar()
     {

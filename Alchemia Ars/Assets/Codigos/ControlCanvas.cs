@@ -25,11 +25,15 @@ public class ControlCanvas : MonoBehaviour
     public static List<AlmacenarPocion> almacenes = new List<AlmacenarPocion>();
     static GameObject control;
     public Sprite[] notasDeExamen;
+    public Sprite[] imagenesSonidos;
     public static Sprite[] notasDeExamenI;
     public static AnimarPapelera papelera;
     public static bool aletorizar = false;
     public static GameObject check;
     public AudioMixer audios;
+    public AudioClip[] audiosVD;
+    public static AudioClip[] audiosVDS;
+    private static AudioSource audioSource;
     private float volumenMusica = 0;
     private float volumenSonidos = 0;
     UnityEngine.Color colorInicio;
@@ -53,6 +57,9 @@ public class ControlCanvas : MonoBehaviour
         BotonIngredientes = pantallaInterfazBotones.transform.GetChild(4).gameObject;
         colorInicio = pantallaInicio.GetComponent<Image>().color;
 
+        audioSource = pantallaVictoria.GetComponent<AudioSource>();
+        audiosVDS = audiosVD;
+
         check = pantallaInterfazBotones.transform.GetChild(5).gameObject;
 
         notasDeExamenI = notasDeExamen;
@@ -64,6 +71,10 @@ public class ControlCanvas : MonoBehaviour
         papelera = GameObject.FindWithTag("Papelera").GetComponent<AnimarPapelera>();
         pociones = control.GetComponent<Control>().pocionFinal.pociones;
         RellenarLista();
+
+
+        audios.SetFloat("VolumenSonidos", -80f);
+        volumenSonidos = -80f;
 
     }
     public void RellenarLista()
@@ -107,6 +118,7 @@ public class ControlCanvas : MonoBehaviour
     {
         InvokeRepeating("Aclarar", 0f, 0.0125f);
         BotonSonido.GetComponent<AudioSource>().Play();
+        Sonido();
 
 
     }
@@ -166,6 +178,7 @@ public class ControlCanvas : MonoBehaviour
         control.GetComponent<Control>().puntajeFinal = 100;
         BotonSalir.SetActive(true);
         pantallaVictoria.SetActive(false);
+        Sonido();
     }
     public void Salir()
     {
@@ -180,30 +193,43 @@ public class ControlCanvas : MonoBehaviour
         BotonSalir.SetActive(false);
         pantallaListaIngredientes.SetActive(false);
         Sonidos(false);
+        pantallaVictoria.SetActive(true);
         puntos = control.GetComponent<Control>().puntajeFinal;
         if (puntos >= 100)
         {
             InsertarPuntos(notasDeExamenI[5]);
+            audioSource.clip = audiosVDS[0];
+            audioSource.Play();
         }
         else if (puntos >= 70)
         {
             InsertarPuntos(notasDeExamenI[4]);
+            audioSource.clip = audiosVDS[0];
+            audioSource.Play();
         }
         else if (puntos >= 50)
         {
             InsertarPuntos(notasDeExamenI[3]);
+            audioSource.clip = audiosVDS[0];
+            audioSource.Play();
         }
         else if (puntos >= 20)
         {
             InsertarPuntos(notasDeExamenI[2]);
+            audioSource.clip = audiosVDS[1];
+            audioSource.Play();
         }
         else if (puntos >= 10)
         {
             InsertarPuntos(notasDeExamenI[1]);
+            audioSource.clip = audiosVDS[1];
+            audioSource.Play();
         }
         else
         {
             InsertarPuntos(notasDeExamenI[0]);
+            audioSource.clip = audiosVDS[1];
+            audioSource.Play();
         }
 
     }
@@ -252,11 +278,23 @@ public class ControlCanvas : MonoBehaviour
         {
             audios.SetFloat("VolumenSonidos", -80f);
             volumenSonidos = -80f;
+
+            BotonSonido.GetComponent<Image>().sprite = imagenesSonidos[3];
+            SpriteState estados = BotonSonido.GetComponent<Button>().spriteState;
+            estados.highlightedSprite = imagenesSonidos[5];
+            estados.pressedSprite = imagenesSonidos[4];
+            BotonSonido.GetComponent<Button>().spriteState = estados;
         }
         else
         {
             audios.SetFloat("VolumenSonidos", 0);
             volumenSonidos = 0;
+
+            BotonSonido.GetComponent<Image>().sprite = imagenesSonidos[0];
+            SpriteState estados = BotonSonido.GetComponent<Button>().spriteState;
+            estados.highlightedSprite = imagenesSonidos[2];
+            estados.pressedSprite = imagenesSonidos[1];
+            BotonSonido.GetComponent<Button>().spriteState = estados;
 
         }
 

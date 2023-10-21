@@ -167,7 +167,7 @@ public class EstacionTrabajo : MonoBehaviour
     public void Apagar()
     {
         Light2D luz = explosion.transform.GetChild(0).GetComponent<Light2D>();
-        luz.intensity -= 50;
+        luz.intensity -= 100;
         if (luz.intensity <= 0)
         {
             luz.intensity = 1000;

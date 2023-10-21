@@ -25,6 +25,8 @@ public class Caldero : MonoBehaviour
     private Control control;
     private Animator animador;
     private ParticleSystem explosion;
+    private AudioSource audio;
+    public AudioClip[] audiosCaldero;
 
     private void Start()
     {
@@ -32,6 +34,7 @@ public class Caldero : MonoBehaviour
         control = transform.parent.parent.GetComponent<Control>();
         animador = transform.GetChild(0).GetComponent<Animator>();
         explosion = transform.GetChild(1).GetComponent<ParticleSystem>();
+        audio = GetComponent<AudioSource>();
     }
     public static void EliminarInventario()
     {
@@ -50,6 +53,8 @@ public class Caldero : MonoBehaviour
             //si hay ingrediente y no esta en el sitio de preparados 
             if (ingrediente.transform.position != posicionFinal.position)
             {
+                audio.clip = audiosCaldero[0];
+                audio.Play();
                 animador.SetBool("introduciendo", true);
                 Invoke("Salir", 0.4f);
                 //añade el ingrediente a la lista y destruye el ingrediente
@@ -62,6 +67,8 @@ public class Caldero : MonoBehaviour
             //si hay pocion y no esta en el sitio de preparados 
             if (pocion.transform.position != posicionFinal.position)
             {
+                audio.clip = audiosCaldero[0];
+                audio.Play();
                 animador.SetBool("introduciendo", true);
                 Invoke("Salir", 0.4f);
                 //añade el ingrediente a la lista y destruye el ingrediente
@@ -96,7 +103,7 @@ public class Caldero : MonoBehaviour
     public void Apagar()
     {
         Light2D luz = explosion.transform.GetChild(0).GetComponent<Light2D>();
-        luz.intensity -= 50;
+        luz.intensity -= 100;
         if (luz.intensity <= 0)
         {
             luz.intensity = 1000;
@@ -125,12 +132,7 @@ public class Caldero : MonoBehaviour
 
 
             }
-            if (pociones.Count > control.pocionFinal.pociones.Count)
-            {
-                explota = true;
-            }
-
-            if (numIp == control.pocionFinal.pociones.Count)
+            if (numIp == control.pocionFinal.pociones.Count && pociones.Count > control.pocionFinal.pociones.Count)
             {
 
                 //le decimos que no siga al cursor
@@ -140,6 +142,23 @@ public class Caldero : MonoBehaviour
                 //creamos el nuevo ingrediente procesado
                 Instantiate(pocionFinal);
                 Invoke("PantallaFinal", 3f);
+                control.CambiarPuntaje(15);
+
+                audio.clip = audiosCaldero[1];
+                audio.Play();
+            }else if (numIp == control.pocionFinal.pociones.Count)
+            {
+
+                //le decimos que no siga al cursor
+                pocionFinal.GetComponent<SeguirCursor>().seguir = false;
+                //lo ponemos en el sitio de preparados
+                pocionFinal.transform.position = posicionFinal.position;
+                //creamos el nuevo ingrediente procesado
+                Instantiate(pocionFinal);
+                Invoke("PantallaFinal", 3f);
+
+                audio.clip = audiosCaldero[1];
+                audio.Play();
             }
         }
     }
@@ -206,6 +225,9 @@ public class Caldero : MonoBehaviour
                     //creamos el nuevo ingrediente procesado
                     Instantiate(pocion);
                     ingredientes = new List<Ingrediente>();
+
+                    audio.clip = audiosCaldero[1];
+                    audio.Play();
                     break;
                 }
             }
