@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using static EstacionTrabajo;
 using static Ingrediente;
@@ -23,12 +24,14 @@ public class Caldero : MonoBehaviour
     //este objeto es el que controla que las mezclas sean las correctas
     private Control control;
     private Animator animador;
+    private ParticleSystem explosion;
 
     private void Start()
     {
         //buscamos el objeto controlador
         control = transform.parent.parent.GetComponent<Control>();
         animador = transform.GetChild(0).GetComponent<Animator>();
+        explosion = transform.GetChild(1).GetComponent<ParticleSystem>();
     }
     public static void EliminarInventario()
     {
@@ -77,11 +80,26 @@ public class Caldero : MonoBehaviour
             pociones = new List<Pocion>();
             control.CambiarPuntaje(-15);
             explota = false;
+            explosion.Play();
+            explosion.transform.GetChild(0).GetComponent<Light2D>().enabled = true;
+            InvokeRepeating("Apagar", 0, 0.1f);
         }
         else
         {
             CrearPocion();
             CrearPocionFinal();
+        }
+    }
+
+    public void Apagar()
+    {
+        Light2D luz = explosion.transform.GetChild(0).GetComponent<Light2D>();
+        luz.intensity -= 50;
+        if (luz.intensity <= 0)
+        {
+            luz.intensity = 1000;
+            luz.enabled = false;
+            CancelInvoke("Apagar");
         }
     }
     private void Salir()
@@ -123,6 +141,7 @@ public class Caldero : MonoBehaviour
             }
         }
     }
+
     private void PantallaFinal()
     {
         ControlCanvas.PantallaVictoria();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using static Ingrediente;
 using static Pocion;
 
@@ -24,6 +25,7 @@ public class EstacionTrabajo : MonoBehaviour
     public AudioSource saudio;
     public Animator animacion;
     public SpriteRenderer SpriteHerramienta;
+    private ParticleSystem explosion;
     private void Start()
     {
         //buscamos el objeto controlador
@@ -32,6 +34,7 @@ public class EstacionTrabajo : MonoBehaviour
         animacion = GetComponent<Animator>();
         imageneO = GetComponent<SpriteRenderer>().sprite;
         SpriteHerramienta = gameObject.GetComponent<SpriteRenderer>();
+        explosion = transform.GetChild(0).GetComponent<ParticleSystem>();
     }
 
     private void Fabricando()
@@ -150,10 +153,24 @@ public class EstacionTrabajo : MonoBehaviour
                     explota = false;
                     Debug.Log("Explota");
                     control.CambiarPuntaje(-5);
+                    explosion.Play();
+                    explosion.transform.GetChild(0).GetComponent<Light2D>().enabled = true;
+                    InvokeRepeating("Apagar", 0, 0.1f);
                 }
                 //eliminamos el ingrediente anterior
                 Destroy(ingrediente);
             }
+        }
+    }
+    public void Apagar()
+    {
+        Light2D luz = explosion.transform.GetChild(0).GetComponent<Light2D>();
+        luz.intensity -= 50;
+        if (luz.intensity <= 0)
+        {
+            luz.intensity = 1000;
+            luz.enabled = false;
+            CancelInvoke("Apagar");
         }
     }
     private Sprite BuscarImagen(Ingrediente.IngredienteN nombre, Ingrediente.Proceso proceso)
