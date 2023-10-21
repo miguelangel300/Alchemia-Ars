@@ -65,10 +65,6 @@ public class SeguirCursor : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (tag == "Pocion" || tag == "PocionFinal")
-        {
-            GetComponent<AudioSource>().Play();
-        }
         //si al pulsar el objeto no nos esta siguiendo
         if (!seguir)
         {

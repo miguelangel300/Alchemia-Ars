@@ -155,8 +155,6 @@ public class EstacionTrabajo : MonoBehaviour
                     control.CambiarPuntaje(-5);
                     explosion.Play();
                     explosion.transform.GetChild(0).GetComponent<Light2D>().enabled = true;
-                    AudioSource sonido = explosion.transform.GetChild(1).GetComponent<AudioSource>();
-                    sonido.Play();
                     InvokeRepeating("Apagar", 0, 0.1f);
                 }
                 //eliminamos el ingrediente anterior
