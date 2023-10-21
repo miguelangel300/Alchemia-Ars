@@ -27,6 +27,7 @@ public class ControlCanvas : MonoBehaviour
     public Sprite[] notasDeExamen;
     public static Sprite[] notasDeExamenI;
     public static AnimarPapelera papelera;
+    public static bool aletorizar = false;
     public AudioMixer audios;
     private float volumenMusica = 0;
     private float volumenSonidos = 0;
@@ -112,6 +113,7 @@ public class ControlCanvas : MonoBehaviour
         pantallaInterfaz.GetComponent<Image>().color = color;
         if (color.a <= 0f)
         {
+            aletorizar = pantallaInicio.transform.GetChild(2).GetChild(0).gameObject.GetComponent<Toggle>().isOn;
             pantallaInicio.SetActive(false);
             BotonSalir.SetActive(false);
             BotonIngredientes.SetActive(true);
