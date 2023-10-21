@@ -55,6 +55,9 @@ public class EstacionTrabajo : MonoBehaviour
     private void OnMouseExit()
     {
         animacion.enabled = true;
+        //buscamos el ingrediente
+        ingrediente = GameObject.FindWithTag("Ingrediente");
+        ingrediente.GetComponent<SpriteRenderer>().enabled = true;
 
     }
     //Al pulsar la estacion de trabajo
@@ -75,6 +78,8 @@ public class EstacionTrabajo : MonoBehaviour
                 if (ingredienteAux.proceso == Ingrediente.Proceso.Ninguno)
                 {
                     saudio.Play();
+
+                    animacion.enabled = true;
                     animacion.SetBool("fabricando", true);
                     Invoke("Fabricando", 0.6f);
                     //buscamos la estacion que se ha selecionado
@@ -127,6 +132,7 @@ public class EstacionTrabajo : MonoBehaviour
                     ingrediente.GetComponent<SeguirCursor>().seguir = false;
                     //lo ponemos en el sitio de preparados
                     ingrediente.transform.position = posicionFinal.position;
+                    ingrediente.GetComponent<SpriteRenderer>().enabled = false;
                     //creamos el nuevo ingrediente procesado
                     Instantiate(ingrediente);
                 }
