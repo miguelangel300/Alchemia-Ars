@@ -106,6 +106,9 @@ public class ControlCanvas : MonoBehaviour
     public void Examinar()
     {
         InvokeRepeating("Aclarar", 0f, 0.0125f);
+        BotonSonido.GetComponent<AudioSource>().Play();
+
+
     }
     public void Aclarar()
     {
@@ -130,12 +133,12 @@ public class ControlCanvas : MonoBehaviour
 
             RellenarLista();
             check.SetActive(false);
-            pantallaInicio.SetActive(false);
             BotonSalir.SetActive(false);
             BotonIngredientes.SetActive(true);
             BotonCasa.SetActive(true);
             Sonidos(true);
             CancelInvoke();
+            pantallaInicio.SetActive(false);
             Seleccionar.Inicio(true);
         }
     }
@@ -156,6 +159,7 @@ public class ControlCanvas : MonoBehaviour
     }
     public void Casa()
     {
+        BotonSonido.GetComponent<AudioSource>().Play();
         Oscurecer();
         LimpiarInventario();
         Seleccionar.Inicio(false);
@@ -165,6 +169,7 @@ public class ControlCanvas : MonoBehaviour
     }
     public void Salir()
     {
+        BotonSonido.GetComponent<AudioSource>().Play();
         Application.Quit();
     }
     public static void PantallaVictoria()
@@ -226,6 +231,7 @@ public class ControlCanvas : MonoBehaviour
 
     public void Musica()
     {
+        BotonSonido.GetComponent<AudioSource>().Play();
         if (volumenMusica == 0)
         {
             audios.SetFloat("VolumenMusica", -80f);
@@ -240,6 +246,7 @@ public class ControlCanvas : MonoBehaviour
     }
     public void Sonido()
     {
+        BotonSonido.GetComponent<AudioSource>().Play();
 
         if (volumenSonidos == 0)
         {
