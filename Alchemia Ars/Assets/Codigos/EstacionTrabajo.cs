@@ -54,7 +54,10 @@ public class EstacionTrabajo : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        animacion.enabled = true;
+        if (animacion != null)
+        {
+            animacion.enabled = true;
+        }
         //buscamos el ingrediente
         ingrediente = GameObject.FindWithTag("Ingrediente");
         if (ingrediente != null)
@@ -82,10 +85,12 @@ public class EstacionTrabajo : MonoBehaviour
                 if (ingredienteAux.proceso == Ingrediente.Proceso.Ninguno)
                 {
                     saudio.Play();
-
-                    animacion.enabled = true;
-                    animacion.SetBool("fabricando", true);
-                    Invoke("Fabricando", 0.6f);
+                    if (animacion != null)
+                    {
+                        animacion.enabled = true;
+                        animacion.SetBool("fabricando", true);
+                        Invoke("Fabricando", 0.6f);
+                    }
                     //buscamos la estacion que se ha selecionado
                     switch (estacion)
                     {

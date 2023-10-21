@@ -266,7 +266,7 @@ AudioSource:
   m_GameObject: {fileID: 43287146}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1215841354052098101, guid: f5df41e0617a06544b35be1a362575c6, type: 2}
   m_audioClip: {fileID: 8300000, guid: b98be9966d4556b4297da06a3a8f1e86, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2156,8 +2156,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.598
   m_LocalBounds:
-    m_Center: {x: -0.007799983, y: -0.04339999, z: 0}
-    m_Extent: {x: 0.5445, y: 0.6609, z: 0}
+    m_Center: {x: -0.019250005, y: -0.051999986, z: 0}
+    m_Extent: {x: 0.54655004, y: 0.6551, z: 0}
   m_PointLightInnerAngle: 63.885376
   m_PointLightOuterAngle: 238.9366
   m_PointLightInnerRadius: 1.87
@@ -3337,7 +3337,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1062404635}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1454861915}
+        m_TargetAssemblyTypeName: ControlCanvas, Assembly-CSharp
+        m_MethodName: Sonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1062404635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4091,8 +4103,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.598
   m_LocalBounds:
-    m_Center: {x: 0.0146999955, y: -0.044, z: 0}
-    m_Extent: {x: 0.5436, y: 0.64059997, z: 0}
+    m_Center: {x: 0.008650005, y: -0.041700006, z: 0}
+    m_Extent: {x: 0.54385, y: 0.6451, z: 0}
   m_PointLightInnerAngle: 63.885376
   m_PointLightOuterAngle: 238.9366
   m_PointLightInnerRadius: 1.87
@@ -5746,6 +5758,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bd3284555cbd2a540b23d0995ec4f401, type: 3}
   - {fileID: 21300000, guid: a1ad63c3fad29d34b81dab1428b7142d, type: 3}
   - {fileID: 21300000, guid: 0754c6556c95f9d40a5bf1c63180a232, type: 3}
+  audios: {fileID: 24100000, guid: f5df41e0617a06544b35be1a362575c6, type: 2}
 --- !u!114 &1454861916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6428,7 +6441,7 @@ SpriteRenderer:
   m_SortingLayerID: -1275122297
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d5071ea4a8d90694bb773c668a10425a, type: 3}
+  m_Sprite: {fileID: -1606482100, guid: b045276eb27857943b34e0ccdbbd7b57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8690,7 +8703,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2061483795}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1454861915}
+        m_TargetAssemblyTypeName: ControlCanvas, Assembly-CSharp
+        m_MethodName: Musica
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2061483795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9000,7 +9025,7 @@ AudioSource:
   m_GameObject: {fileID: 2093831586}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1215841354052098101, guid: f5df41e0617a06544b35be1a362575c6, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5989dcbe677fe0b449e2ec8f0d1ef4af, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

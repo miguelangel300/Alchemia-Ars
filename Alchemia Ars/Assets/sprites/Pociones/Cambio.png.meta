@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9fc66755802bc254fb51adb181a6d17f
+guid: 6a67260d0d8794745acbb28bed5d2b22
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 1500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,112 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Mandragora417x597_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1451
-        width: 417
-        height: 597
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2f7b1d365528c945a04c95bac136004
-      internalID: 1032668423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mandragora417x597_1
-      rect:
-        serializedVersion: 2
-        x: 417
-        y: 1451
-        width: 417
-        height: 597
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd8ecb0539231a746bbce76f433ad46f
-      internalID: -1706222058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mandragora417x597_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 854
-        width: 417
-        height: 597
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6de7ad34b51944c4bb49ebcadbd19f0d
-      internalID: 2043029519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mandragora417x597_3
-      rect:
-        serializedVersion: 2
-        x: 417
-        y: 854
-        width: 417
-        height: 597
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56ca986b1c8b95b4cb1e864780df3eda
-      internalID: 1105912484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mandragora417x597_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 257
-        width: 417
-        height: 597
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35c53a1c2f608fa49a39e15c9f3f47ed
-      internalID: 55605617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -237,12 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Mandragora417x597_0: 1032668423
-      Mandragora417x597_1: -1706222058
-      Mandragora417x597_2: 2043029519
-      Mandragora417x597_3: 1105912484
-      Mandragora417x597_4: 55605617
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

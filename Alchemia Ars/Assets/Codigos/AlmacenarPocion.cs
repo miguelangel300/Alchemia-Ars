@@ -6,23 +6,24 @@ public class AlmacenarPocion : MonoBehaviour
 {
     //Ingrediente del plato
     public int indice = -1;
-    private SpriteRenderer spriteOriginal;
+    private Sprite spriteOriginal;
     public GameObject[] pociones;
     public bool siguiendo = false;
 
     private void Start()
     {
-        spriteOriginal = GetComponent<SpriteRenderer>();
+        spriteOriginal = GetComponent<SpriteRenderer>().sprite;
     }
     public void EliminarInventario()
     {
         indice = -1;
-        GetComponent<SpriteRenderer>().sprite = spriteOriginal.sprite;
+        GetComponent<SpriteRenderer>().sprite = spriteOriginal;
         GetComponent<SpriteRenderer>().color = Color.white;
 
     }
     private void OnMouseDown()
     {
+        siguiendo = false;
         if (indice > 0)
         {
 
@@ -49,7 +50,7 @@ public class AlmacenarPocion : MonoBehaviour
             {
                 Instantiate(pociones[indice]);
                 indice = -1;
-                GetComponent<SpriteRenderer>().sprite = spriteOriginal.sprite;
+                GetComponent<SpriteRenderer>().sprite = spriteOriginal;
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
         }

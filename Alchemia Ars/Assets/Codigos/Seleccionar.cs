@@ -12,7 +12,7 @@ public class Seleccionar : MonoBehaviour
     private SpriteRenderer ingrediente;
     private int indice;
     [Range(0f, 1f)]
-    public float velocidad = 0.1f;
+    public float velocidad = 1f;
     private void Start()
     {
         ingrediente = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
