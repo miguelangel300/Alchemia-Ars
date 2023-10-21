@@ -43,9 +43,9 @@ public class EstacionTrabajo : MonoBehaviour
         //buscamos el ingrediente
         ingrediente = GameObject.FindWithTag("Ingrediente");
         //si no esta en la posicion del sitio de preparados
-        if (ingrediente != null)
+        if (ingrediente != null && animacion != null)
         {
-            if (ingrediente.transform.position != posicionFinal.position && imageneS != null && SpriteHerramienta.sprite != imageneS) 
+            if (ingrediente.transform.position != posicionFinal.position && imageneS != null && SpriteHerramienta.sprite != imageneS)
             {
                 animacion.enabled = false;
                 SpriteHerramienta.sprite = imageneS;
@@ -54,7 +54,10 @@ public class EstacionTrabajo : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        animacion.enabled = true;
+        if (animacion != null)
+        {
+            animacion.enabled = true;
+        }
 
     }
     //Al pulsar la estacion de trabajo
@@ -75,8 +78,11 @@ public class EstacionTrabajo : MonoBehaviour
                 if (ingredienteAux.proceso == Ingrediente.Proceso.Ninguno)
                 {
                     saudio.Play();
-                    animacion.SetBool("fabricando", true);
-                    Invoke("Fabricando", 0.6f);
+                    if (animacion != null)
+                    {
+                        animacion.SetBool("fabricando", true);
+                        Invoke("Fabricando", 0.6f);
+                    }
                     //buscamos la estacion que se ha selecionado
                     switch (estacion)
                     {
