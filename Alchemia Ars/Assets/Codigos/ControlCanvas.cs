@@ -113,11 +113,12 @@ public class ControlCanvas : MonoBehaviour
         if (color.a <= 0f)
         {
             pantallaInicio.SetActive(false);
+            BotonSalir.SetActive(false);
             BotonIngredientes.SetActive(true);
             BotonCasa.SetActive(true);
             Sonidos(true);
             CancelInvoke();
-            Seleccionar.Inicio();
+            Seleccionar.Inicio(true);
         }
     }
     public void Oscurecer()
@@ -131,14 +132,14 @@ public class ControlCanvas : MonoBehaviour
         Imagen.GetComponent<RawImage>().color = colorInicio;
         pantallaInterfaz.GetComponent<Image>().color = colorInicio;
         Sonidos(false);
-        Seleccionar.Inicio();
+        Seleccionar.Inicio(false);
 
     }
     public void Casa()
     {
         Oscurecer();
         LimpiarInventario();
-        Seleccionar.start = true;
+        Seleccionar.Inicio(false);
         control.GetComponent<Control>().puntajeFinal = 100;
         BotonSalir.SetActive(true);
         pantallaVictoria.SetActive(false);
@@ -238,7 +239,6 @@ public class ControlCanvas : MonoBehaviour
     public static void LimpiarInventario()
     {
 
-        Seleccionar.Inicio();
         Caldero.EliminarInventario();
         BotonCasa.SetActive(false);
         for (int i = 0; i < almacenes.Count; i++)
