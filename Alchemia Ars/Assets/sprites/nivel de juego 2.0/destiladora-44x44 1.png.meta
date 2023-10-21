@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97ad2e86dcef59940b2ff08a887f215f
+guid: 664e55fa9f0c0d6408f52173da9bc629
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: destiladora-selccionado
+      name: destiladora-idle
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eae0e00117fee44a96d4e7b202d4ce0
-      internalID: 1789851037
+      spriteID: fc885cb5e2c45f847847d691416db4e3
+      internalID: -1498139422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_1
+      name: destiladora-seleccionado
       rect:
         serializedVersion: 2
         x: 44
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6dd606a435d10849bfffeb4448dc36d
-      internalID: 1301217635
+      spriteID: b7459535712e72042bf23676c674c3bc
+      internalID: -862130274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_2
+      name: destiladora-44x44 1_2
       rect:
         serializedVersion: 2
         x: 88
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3371122c2cb7d4aa3e4aaaa6bea4a9
-      internalID: -1936509686
+      spriteID: f8c1f8930ad7ade4ebc6f2f6a047189d
+      internalID: -1069055633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_3
+      name: destiladora-44x44 1_3
       rect:
         serializedVersion: 2
         x: 132
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bf6b5af0a38dd144abde99b4fe06cca
-      internalID: 1484875768
+      spriteID: 6a77f5db4e50d8d4382ac8c2d8278a75
+      internalID: -1213698176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_4
+      name: destiladora-44x44 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae6a1c487e3e53f4785964d35f43279e
-      internalID: -627124357
+      spriteID: d740bab79f835cb448c4140129f7eaae
+      internalID: -1882789306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_5
+      name: destiladora-44x44 1_5
       rect:
         serializedVersion: 2
         x: 44
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47fd42a25d83fe342b3fdf1198f35391
-      internalID: 1410116362
+      spriteID: d64f8375c4d9a0a41b7349021ad21fa0
+      internalID: 192610641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_6
+      name: destiladora-44x44 1_6
       rect:
         serializedVersion: 2
         x: 88
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cc0f00bb361ff54f9674ffab7fdaaeb
-      internalID: -659444815
+      spriteID: a18da21c2557b424c97a9310fb7b7816
+      internalID: -1324066733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_7
+      name: destiladora-44x44 1_7
       rect:
         serializedVersion: 2
         x: 132
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c94aab7e046e79e4fa75df02fb981235
-      internalID: -99851576
+      spriteID: 656cb9645bc4767429103f4f34861fe0
+      internalID: -614087142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_8
+      name: destiladora-44x44 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10dbb351b7b3c0444a42351c62cc128d
-      internalID: -1281276876
+      spriteID: 2912bb3448e51b24bbd16032fa49f551
+      internalID: 929961958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: destiladora-44x44_9
+      name: destiladora-44x44 1_9
       rect:
         serializedVersion: 2
         x: 44
@@ -326,8 +326,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33012b2e25adf6b4e8bd85b4629dc435
-      internalID: 1215033829
+      spriteID: 294777c0f6dfde14ab251ea0b5a62c0c
+      internalID: 1646258404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: destiladora-44x44 1_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838ca5b8f3b17c045bcfe2183f5b1293
+      internalID: 883470021
       vertices: []
       indices: 
       edges: []
@@ -343,16 +364,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      destiladora-44x44_1: 1301217635
-      destiladora-44x44_2: -1936509686
-      destiladora-44x44_3: 1484875768
-      destiladora-44x44_4: -627124357
-      destiladora-44x44_5: 1410116362
-      destiladora-44x44_6: -659444815
-      destiladora-44x44_7: -99851576
-      destiladora-44x44_8: -1281276876
-      destiladora-44x44_9: 1215033829
-      destiladora-selccionado: 1789851037
+      destiladora-44x44 1_10: 883470021
+      destiladora-44x44 1_2: -1069055633
+      destiladora-44x44 1_3: -1213698176
+      destiladora-44x44 1_4: -1882789306
+      destiladora-44x44 1_5: 192610641
+      destiladora-44x44 1_6: -1324066733
+      destiladora-44x44 1_7: -614087142
+      destiladora-44x44 1_8: 929961958
+      destiladora-44x44 1_9: 1646258404
+      destiladora-idle: -1498139422
+      destiladora-seleccionado: -862130274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
