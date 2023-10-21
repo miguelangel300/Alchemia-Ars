@@ -1374,6 +1374,7 @@ GameObject:
   - component: {fileID: 529723259}
   - component: {fileID: 529723260}
   - component: {fileID: 529723261}
+  - component: {fileID: 529723262}
   m_Layer: 0
   m_Name: Escenario
   m_TagString: Escenario
@@ -1468,6 +1469,102 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!82 &529723262
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529723258}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 594d07c1928f82b429a3f0eb4b1d7e8b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &584721164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,7 +1582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &584721165
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2090,8 +2187,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.598
   m_LocalBounds:
-    m_Center: {x: -0.0119999945, y: -0.04944998, z: 0}
-    m_Extent: {x: 0.54840004, y: 0.65805, z: 0}
+    m_Center: {x: -0.007950008, y: -0.055449992, z: 0}
+    m_Extent: {x: 0.54645, y: 0.65975, z: 0}
   m_PointLightInnerAngle: 63.885376
   m_PointLightOuterAngle: 238.9366
   m_PointLightInnerRadius: 1.87
@@ -2609,27 +2706,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hola soy tu examinador de la escuela Alchemia Ars.
-
-
-
-    Por favor mira
-    la nota que esta en tu mesa alli encontraras el objetivo con las pociones a mezclar
-    para realizarlo y los ingredientes para preparar dichas pociones.
-
-
-
-    Usa
-    las herramientas de la mesa para preparar los ingredientes, usa el caldero para
-    mezclar los distintos ingredientes y las pociones.
-
-
-    Si mezclas mas de 3
-    ingredientes o son incompatiples o mezclas pociones e ingredientes juntos se
-    desbordara el caldero vaciandose.
-
-
-    Te deseo mucha magia.'
+  m_text: "Hola soy tu examinador de la escuela Alchemia Ars.\nTu objetivo es elaborar
+    con exito la poci\xF3n final,\n\nPor favor mira la nota que esta en tu mesa alli
+    encontraras el objetivo con las pociones a mezclar para realizarlo y los ingredientes
+    para preparar dichas pociones.\n\nUsa las herramientas de la mesa para preparar
+    los ingredientes, usa el caldero para mezclar los distintos ingredientes y las
+    pociones.\n\nSi mezclas mas de 3 ingredientes o son incompatiples o mezclas pociones
+    e ingredientes juntos se desbordara el caldero vaciandose.\n\nTe deseo mucha
+    magia."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6a0f2f0bf65201d4bb17cf2e93aab3c8, type: 2}
   m_sharedMaterial: {fileID: 3975692283890403509, guid: 6a0f2f0bf65201d4bb17cf2e93aab3c8, type: 2}
@@ -4038,8 +4122,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.598
   m_LocalBounds:
-    m_Center: {x: 0.013300002, y: -0.046300024, z: 0}
-    m_Extent: {x: 0.5365, y: 0.6381, z: 0}
+    m_Center: {x: 0.00850001, y: -0.04795, z: 0}
+    m_Extent: {x: 0.5379, y: 0.63615, z: 0}
   m_PointLightInnerAngle: 63.885376
   m_PointLightOuterAngle: 238.9366
   m_PointLightInnerRadius: 1.87
@@ -6399,6 +6483,7 @@ GameObject:
   - component: {fileID: 1550668616}
   - component: {fileID: 1550668617}
   - component: {fileID: 1550668618}
+  - component: {fileID: 1550668619}
   m_Layer: 0
   m_Name: Tabla de cortar
   m_TagString: Untagged
@@ -6630,6 +6715,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1550668619
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550668613}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84a7ea0719b689c4985fcfd73d9a0874, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1553678278
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,7 +7100,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6a0f2f0bf65201d4bb17cf2e93aab3c8, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 3975692283890403509, guid: 6a0f2f0bf65201d4bb17cf2e93aab3c8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
